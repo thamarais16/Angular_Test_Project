@@ -1,4 +1,10 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<div class="{{header}}">
+  <h1>{{heading}}</h1>
+</div>
+
+<div></div>
+<ul >
+  <li *ngFor="let movie of movies;">
+    {{movie.title}} -{{movie.director}}
+  </li>
+</ul>
