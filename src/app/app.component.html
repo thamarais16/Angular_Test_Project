@@ -3,18 +3,61 @@
     <h1>{{heading}}</h1>
   </div>
   <div class="card-body">
-
-    <select [ngModel]="num" (ngModelChange)="num = $event" >
+    
+    <!-- Switch -->
+    <!-- <select [ngModel]="num" (ngModelChange)="num = $event" >
     <option *ngFor="let item of items" [value]="item.val">{{item.name}}
     </option>
     </select>
 
     <ng-container [ngSwitch]="num">
       <ng-template [ngSwitchCase]="0">{{'This is'+ num}}</ng-template>
-      <ng-template [ngSwitchCase]="1">{{'This is'+ num}}</ng-template>
-      <ng-template [ngSwitchCase]="2">{{'This is'+ num}}</ng-template>
+      <ng-template [ngSwitchCase]="1">
+        <ng-container *ngTemplateOutlet="st1"></ng-container>
+      </ng-template>
+      <ng-template [ngSwitchCase]="2">
+         <ng-container *ngTemplateOutlet="st2"></ng-container>
+      </ng-template>
       <ng-template ngSwitchDefault>{{'None of case matched'}}</ng-template>
+       <ng-template ngSwitchDefault>{{' babe'}}</ng-template>
     </ng-container>
+
+    <ng-template #st1>
+      <p [textContent]="'Hi i am 1'"></p>
+    </ng-template>
+    <ng-template #st2>
+      <p [textContent]="'Hi i am 2'"></p>
+    </ng-template> -->
+
+    <!-- for directive -->
+    <!-- <ul >
+      <li *ngFor="let movie of movies">
+        {{movie.title}} - {{movie.director}}
+      </li>
+    </ul> -->
+    <div class="panel panel-primary">
+      <div class="panel-body"> 
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Release Date</th>
+                <th>Director</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let movie of movies; let i= index; let c= count; let f= first; let l= last; let e= even;" [ngClass]="{'eve': e, '':e == false}">
+                <td>{{movie.title}}</td>
+                <td>{{movie.releaseDate}}</td>
+                <td>{{movie.director}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
