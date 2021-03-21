@@ -1,4 +1,5 @@
 import { Component, VERSION } from '@angular/core';
+//import { Logger } from '/src/app/log'
 
 @Component({
   selector: 'my-app',
@@ -20,6 +21,12 @@ export class AppComponent  {
   num: number = 1;
   items: item[] = [{name: 'One', val: 1}, {name: 'Two', val: 2}, {name: 'Three', val: 3}, {name: 'Four', val: 3}, {name: 'Five', val: 3}];
 
+  firstName: string = "";
+  changeValue: string= "";
+  firstNameChange: Function = (event)=>{
+    console.log(event);
+    this.changeValue = event.target.value;
+  }
 }
 
 class Movie {
