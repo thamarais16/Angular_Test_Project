@@ -35,6 +35,10 @@ export class OfficialComponent implements OnInit {
       { title: 'Warcraft', director: 'Duncan Jones'},
     ]
   }
+
+  trackByFn(index, item) {
+    return item.title;
+  }
 }
 
   interface Movie{
