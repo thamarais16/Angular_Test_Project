@@ -7,7 +7,7 @@ import { Component, VERSION } from '@angular/core';
   styleUrls: [ "./app.component.css" ]
 })
 export class AppComponent  {
-  name = 'Angular ' + VERSION.major;
+  //name = 'Angular ' + VERSION.major;
   header: string = "header";
   heading: string = "Welcome"; 
   movies: Movie[] =[
@@ -18,7 +18,7 @@ export class AppComponent  {
     {title:'Warcraft',director:'Duncan Jones',cast:'Travis Fimmel, Robert Kazinsky, Ben Foster',releaseDate:'June 10, 2016'},
   ]
 
-  num: number = 1;
+  num: any = 1;
   items: item[] = [{name: 'One', val: 1}, {name: 'Two', val: 2}, {name: 'Three', val: 3}, {name: 'Four', val: 3}, {name: 'Five', val: 3}];
 
   firstName: string = "";
@@ -26,6 +26,11 @@ export class AppComponent  {
   firstNameChange: Function = (event)=>{
     console.log(event);
     this.changeValue = event.target.value;
+  }
+  name: string ="Hi";
+  name1;
+  count(event){
+    this.num= event.target.value;
   }
 }
 

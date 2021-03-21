@@ -64,8 +64,17 @@
      <p >{{changeValue | uppercase}}</p> -->
 
      <!-- change -->
-     <input type="text" (change)="firstNameChange($event)"/>
-     <p >{{changeValue | uppercase}}</p>
+     <!-- <input type="text" (change)="firstNameChange($event)"/>
+     <p >{{changeValue | uppercase}}</p> -->
+
+    <!-- Two way data binding-->
+     <!-- <input type="text" [value]="name" on-input="name = $any($event.target).value">
+     <p>{{name}}</p>
+     <button on-click ="name = ''"> click</button> -->
+
+      <p>{{name1}}</p>
+     <input on-input="count($event); name1 = num">click</button>
+
   </div>
 </div>
 
