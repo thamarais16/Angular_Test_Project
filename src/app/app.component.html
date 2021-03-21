@@ -72,8 +72,28 @@
      <p>{{name}}</p>
      <button on-click ="name = ''"> click</button> -->
 
-      <p>{{name1}}</p>
-     <input on-input="count($event); name1 = num">click</button>
+     <!-- event binding-->
+      <!-- <p>{{name1}}</p>
+     <input [value]="name1" on-input="count($event)" #el> -->
+
+     <!-- <select [(ngModel)]="vels" >
+       <option value="summa">summa</option>
+        <option value="dumma">dumma</option>
+     </select>
+     <p>{{vels}}</p> -->
+
+    <!-- property binding -->
+    <!-- <div [innerHTML]="text"> </div> -->
+      <!-- <div [style.color]="name1" [textContent]="name"></div> -->
+
+      <p class="{{bumba}}">
+        {{5*5}} 
+        <img src="{{itemImageUrl}}" />
+        <input type="text" (input)="name= $any($event.target).value" #tt/>
+       
+      </p><br>
+       <a style.color={{name1}} > {{tt.value}} </a>
+
 
   </div>
 </div>

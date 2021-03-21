@@ -2,7 +2,7 @@ import { Component, VERSION } from '@angular/core';
 //import { Logger } from '/src/app/log'
 
 @Component({
-  selector: 'my-app',
+  selector: "div[m='my-app']",
   templateUrl: "./app.component.html",
   styleUrls: [ "./app.component.css" ]
 })
@@ -28,10 +28,18 @@ export class AppComponent  {
     this.changeValue = event.target.value;
   }
   name: string ="Hi";
-  name1;
+  name1 = "red";
   count(event){
-    this.num= event.target.value;
+    //this.num= event.target.value;
+    this.name1= event.target.value;
   }
+  vels:any;
+  text= "<script>alert('hi')</script>";
+  itemImageUrl="https://angular.io/assets/images/logos/angular/logo-nav@2x.png";
+  display(): string{
+    return "Hi";
+  }
+  bumba: string= "bumba";
 }
 
 class Movie {
