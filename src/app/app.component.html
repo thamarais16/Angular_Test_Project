@@ -2,7 +2,7 @@
   <div class="card-header {{header}}">
     <h1>{{heading}}</h1>
   </div>
-  <div class="card-body">
+  <div class="card-body"> 
     
     <!-- Switch -->
     <!-- <select [ngModel]="num" (ngModelChange)="num = $event" >
@@ -47,7 +47,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let movie of movies; let i= index; let c= count; let f= first; let l= last; let e= even;" [ngClass]="{'eve': e, '':e == false}">
+              <tr *ngFor="let movie of movies; let i= index; let c= count; let f= first; let l= last; let e= even; " [ngClass]="{'eve': e, 'odd':e == false}">
                 <td>{{movie.title}}</td>
                 <td>{{movie.releaseDate}}</td>
                 <td>{{movie.director}}</td>

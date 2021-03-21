@@ -5,3 +5,13 @@ p {
   text-align: center;
   
 }
+
+.eve{
+  background-color: black;
+  color: white;
+}
+
+.odd{
+  background-color: red;
+  color: white;
+}
