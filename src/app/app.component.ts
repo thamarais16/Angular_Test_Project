@@ -8,7 +8,7 @@ import { Component, VERSION } from '@angular/core';
 export class AppComponent  {
   name = 'Angular ' + VERSION.major;
   header: string = "header";
-  heading: string = "Welcome";
+  heading: string = "Welcome"; 
   movies: Movie[] =[
     {title:'Zootopia',director:'Byron Howard, Rich Moore',cast:'Idris Elba, Ginnifer Goodwin, Jason Bateman',releaseDate:'March 4, 2016'},
     {title:'Batman v Superman: Dawn of Justice',director:'Zack Snyder',cast:'Ben Affleck, Henry Cavill, Amy Adams',releaseDate:'March 25, 2016'},
@@ -17,14 +17,20 @@ export class AppComponent  {
     {title:'Warcraft',director:'Duncan Jones',cast:'Travis Fimmel, Robert Kazinsky, Ben Foster',releaseDate:'June 10, 2016'},
   ]
 
+  num: number = 1;
+  items: item[] = [{name: 'One', val: 1}, {name: 'Two', val: 2}, {name: 'Three', val: 3}, {name: 'Four', val: 3}, {name: 'Five', val: 3}];
 
 }
-
 
 class Movie {
   title : string;
   director : string;
   cast : string;
   releaseDate : string;
+}
+
+interface item{
+  name: string;
+  val: number;
 }
 

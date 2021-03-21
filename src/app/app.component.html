@@ -1,10 +1,23 @@
-<div class="{{header}}">
-  <h1>{{heading}}</h1>
+<div class="card">
+  <div class="card-header {{header}}">
+    <h1>{{heading}}</h1>
+  </div>
+  <div class="card-body">
+
+    <select [ngModel]="num" (ngModelChange)="num = $event" >
+    <option *ngFor="let item of items" [value]="item.val">{{item.name}}
+    </option>
+    </select>
+
+    <ng-container [ngSwitch]="num">
+      <ng-template [ngSwitchCase]="0">{{'This is'+ num}}</ng-template>
+      <ng-template [ngSwitchCase]="1">{{'This is'+ num}}</ng-template>
+      <ng-template [ngSwitchCase]="2">{{'This is'+ num}}</ng-template>
+      <ng-template ngSwitchDefault>{{'None of case matched'}}</ng-template>
+    </ng-container>
+  </div>
 </div>
 
-<div></div>
-<ul >
-  <li *ngFor="let movie of movies;">
-    {{movie.title}} -{{movie.director}}
-  </li>
-</ul>
+
+
+
