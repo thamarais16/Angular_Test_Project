@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-official',
   templateUrl: './official.component.html',
@@ -20,9 +20,11 @@ export class OfficialComponent implements OnInit {
   }
 
   addMovies(){
-    this.movies.push({title: this.title, director: this.director})
+    this.movies.push({title: this.title, director: this.director});
+    this.title = "";
+    this.director = "";
   }
-
+ 
   Refresh() {
     console.log("refresh")
     this.movies = [

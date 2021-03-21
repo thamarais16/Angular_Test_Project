@@ -5,3 +5,9 @@
     </ul>
   </div>
 </div>
+<input [ngModel]="title" (ngModelChange)="title = $event"/><br><br>
+<input [ngModel]="director" (ngModelChange)="director = $event"/>
+
+<button on-click="addMovies()">add</button><br><br>
+
+<button on-click="Refresh()">refresh</button>
