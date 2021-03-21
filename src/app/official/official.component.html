@@ -1,0 +1,7 @@
+<div class="card">
+  <div class="card-body">
+    <ul *ngFor="let movie of movies; let i = index;">
+      <li>{{movie.title + ' '+ movie.director}}</li><button on-click="removeMovies(i)">remove</button>
+    </ul>
+  </div>
+</div>

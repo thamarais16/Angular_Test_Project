@@ -9,6 +9,6 @@ import { OfficialComponent } from './official/official.component';
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
   declarations: [ AppComponent, HelloComponent, OfficialComponent ],
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ OfficialComponent ]
 })
 export class AppModule { }
