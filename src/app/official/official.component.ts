@@ -36,12 +36,34 @@ export class OfficialComponent implements OnInit {
     ]
   }
 
+
+
   trackByFn(index, item) {
     return item.title;
   }
+
+  kal(val): any {
+      alert(val);
+  }
+
+  ifDirective: IfObj<boolean, string, number> ={
+    showMe: false,
+    trueContent: "Check Box is Checked",
+    falseContent: "Check Box is Un-Checked",
+    align: "center"
+  }
+
+
 }
 
-  interface Movie{
-    title: string;
-    director: string;
-  }
+interface Movie{
+  title: string;
+  director: string;
+}
+
+interface IfObj<T, U, V>{
+  showMe: T;
+  trueContent: U;
+  falseContent: U;
+  align: U;
+}

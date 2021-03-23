@@ -1,7 +1,8 @@
-<div class="card">
+<!-- <div class="card">
   <div class="card-body">
-    <ul >
-      <li *ngFor="let movie of movies; let i = index;trackBy: trackByFn;">{{movie.title + ' '+ movie.director}}<button on-click="removeMovies(i)">remove</button></li>
+    <ul>
+      <li *ngFor="let movie of movies; let i = index;trackBy: trackByFn;">{{movie.title + ' '+
+        movie.director}}<button on-click="removeMovies(i)">remove</button></li>
     </ul>
   </div>
 </div>
@@ -11,3 +12,51 @@
 <button on-click="addMovies()">add</button><br><br>
 
 <button on-click="Refresh()">refresh</button>
+
+<select ngModel (ngModelChange)=" kal($event)" >
+  <option value="movies[0]['title']">urrrrr<option>
+  <option value="kumbai">Thullllll<option>
+</select> -->
+
+
+<!----- ngIf, ngIf else, ngIf then else, hidden --->
+<div class="card">
+  <h1 [style.text-align]="ifDirective.align" class="card-header"> ngIf </h1>
+
+  <div class="card-body">
+
+    <input type="checkbox" [(ngModel)]="ifDirective.showMe" placeholder="Show"/>
+
+
+    <h3>ng if </h3>
+
+    <p *ngIf="ifDirective.showMe">{{ifDirective.trueContent}}</p>
+    <p *ngIf="!ifDirective.showMe">{{ifDirective.falseContent}}</p>
+
+    <h3>ngif else</h3>
+
+    <p *ngIf="ifDirective.showMe; else elseBlock">{{ifDirective.trueContent}}</p>
+    <ng-template #elseBlock>
+      <p>{{ifDirective.falseContent}}</p>
+    </ng-template>
+
+    <h3> ngif then else</h3>
+
+    <p *ngIf="ifDirective.showMe; then thenBlock1; else elseBlock1">
+      This will not render.
+    </p>
+
+    <ng-template #thenBlock1>
+        <p>{{ifDirective.trueContent}}</p>
+    </ng-template>
+
+    <ng-template #elseBlock1>
+      <p>{{ifDirective.falseContent}}</p>
+    </ng-template>
+
+    <h3>hidden atrribute</h3>
+
+    <p [hidden]="ifDirective.showMe">Hidden atrribute</p>
+    
+  </div>
+</div>
