@@ -29,6 +29,7 @@ export class AppComponent  {
   }
   name: string ="Hi";
   name1 = "red";
+//static promise: any;
   count(event){
     //this.num= event.target.value;
     this.name1= event.target.value;
@@ -40,7 +41,29 @@ export class AppComponent  {
     return "Hi";
   }
   bumba: string= "bumba";
+
+   promise = new Promise((resolve, reject): any =>{
+     let a = "ruba";
+
+     switch(a){
+       case "ruba":
+        resolve("machi");
+        break;
+       default:
+        reject("urrrr");
+     }
+   });
+
+   dis(){
+ 
+   }
+
 }
+let a = new AppComponent();
+a.dis();
+
+
+
 
 class Movie {
   title : string;
