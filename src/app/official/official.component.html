@@ -20,7 +20,7 @@
 
 
 <!----- ngIf, ngIf else, ngIf then else, hidden --->
-<div class="card">
+<!-- <div class="card">
   <h1 [style.text-align]="ifDirective.align" class="card-header"> ngIf </h1>
 
   <div class="card-body">
@@ -57,6 +57,18 @@
     <h3>hidden atrribute</h3>
 
     <p [hidden]="ifDirective.showMe">Hidden atrribute</p>
+
     
+  </div>
+</div> -->
+
+<div class="card">
+  <h1 [style.text-align]="ifDirective.align" style.color={{color}} class="card-header"> ngClass & ngStyle </h1>
+
+  <div class="card-body">
+
+    <ng-container *ngFor="let val of vals; let i = index;let c= count; ">
+      <input type="radio" [value]="val.id" [placeholder]="val.name" />
+    </ng-container>
   </div>
 </div>

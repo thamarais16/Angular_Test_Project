@@ -53,7 +53,19 @@ export class OfficialComponent implements OnInit {
     align: "center"
   }
 
+  name: string;
+  color: string = "red";
 
+  vals : Val<string, number>[] = [
+    {name: "Thamarai", id: 1},
+    {name: "Selvan", id: 2},
+    {name: "Thiru", id: 3},
+    {name: "murugan", id: 4}
+  ]
+
+  trackByOp(index, obj): number{
+    return obj.id;
+  }
 }
 
 interface Movie{
@@ -66,4 +78,9 @@ interface IfObj<T, U, V>{
   trueContent: U;
   falseContent: U;
   align: U;
+}
+
+class Val<T, U>{
+  readonly name: T;
+  readonly id: U;
 }
