@@ -62,13 +62,17 @@
   </div>
 </div> -->
 
+<!--Custom Atrribute Directive-->
 <div class="card">
-  <h1 [style.text-align]="ifDirective.align" style.color={{color}} class="card-header"> ngClass & ngStyle </h1>
+  <h1 [style.text-align]="ifDirective.align" style.color={{color}} class="card-header"> Custom Atrribute Directive </h1>
 
   <div class="card-body">
-
-    <ng-container *ngFor="let val of vals; let i = index;let c= count; ">
-      <input type="radio" [value]="val.id" [placeholder]="val.name" />
-    </ng-container>
+    <select [(ngModel)] ="myColor">  
+      <option value='' selected> Select Color </option>  
+      <option *ngFor = "let color of colors" [value] = "color">  
+          {{color}}  
+      </option>  
+    </select>  
+  <p [dynamicColor]="myColor" defaultValue="red"> dynamicColor Directive Demo</p>  
   </div>
 </div>

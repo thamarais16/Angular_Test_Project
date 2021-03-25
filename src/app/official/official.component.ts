@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+
 @Component({
   selector: 'app-official',
   templateUrl: './official.component.html',
@@ -66,6 +67,10 @@ export class OfficialComponent implements OnInit {
   trackByOp(index, obj): number{
     return obj.id;
   }
+
+    txtsize = '25px';  
+   colors = ['CYAN', 'GREEN', 'YELLOW'];  
+   myColor = ''; 
 }
 
 interface Movie{
