@@ -5,8 +5,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
-import { OfficialComponent } from './official/official.component';
-import { DpDirective } from './dp.directive';
+import { OfficialComponent } from './official/official.component'
 
 @NgModule({ 
   imports: [
@@ -17,8 +16,7 @@ import { DpDirective } from './dp.directive';
   declarations: [
     AppComponent,
     HelloComponent,
-    OfficialComponent,
-    DpDirective
+    OfficialComponent
   ],
   providers: [],
   bootstrap:[OfficialComponent]

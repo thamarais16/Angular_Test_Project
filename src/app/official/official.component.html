@@ -4,7 +4,7 @@
       <li *ngFor="let movie of movies; let i = index;trackBy: trackByFn;">{{movie.title + ' '+
         movie.director}}<button on-click="removeMovies(i)">remove</button></li>
     </ul>
-  </div>
+  </div> 
 </div>
 <input [ngModel]="title" (ngModelChange)="title = $event"/><br><br>
 <input [ngModel]="director" (ngModelChange)="director = $event"/>
@@ -67,12 +67,7 @@
   <h1 [style.text-align]="ifDirective.align" style.color={{color}} class="card-header"> Custom Atrribute Directive </h1>
 
   <div class="card-body">
-    <select [(ngModel)] ="myColor">  
-      <option value='' selected> Select Color </option>  
-      <option *ngFor = "let color of colors" [value] = "color">  
-          {{color}}  
-      </option>  
-    </select>  
-  <p [dynamicColor]="myColor" defaultValue="red"> dynamicColor Directive Demo</p>  
+    
+  
   </div>
 </div>
