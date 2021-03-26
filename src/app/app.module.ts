@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { OfficialComponent } from './official/official.component';
+import { TsClassDirective } from './ts-class.directive';
 
 @NgModule({
   imports:      [
@@ -16,7 +17,8 @@ import { OfficialComponent } from './official/official.component';
   declarations: [ 
     AppComponent, 
     HelloComponent, 
-    OfficialComponent 
+    OfficialComponent,
+    TsClassDirective
   ],
   bootstrap:    [ OfficialComponent ]
 })

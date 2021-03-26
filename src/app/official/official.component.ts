@@ -71,6 +71,7 @@ export class OfficialComponent implements OnInit {
     txtsize = '25px';  
    colors = ['CYAN', 'GREEN', 'YELLOW'];  
    myColor = ''; 
+   red: string = "maphia";
 }
 
 interface Movie{
