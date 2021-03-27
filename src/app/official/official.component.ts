@@ -68,10 +68,13 @@ export class OfficialComponent implements OnInit {
     return obj.id;
   }
 
-    txtsize = '25px';  
-   colors = ['CYAN', 'GREEN', 'YELLOW'];  
-   myColor = ''; 
-   red: string = "maphia";
+  txtsize = '25px';  
+  colors = ['CYAN', 'GREEN', 'YELLOW'];  
+  myColor = ''; 
+
+  customArrayClass: Array<string> = ['customColor', 'customSize'];
+  customStringClass: string = "customColor customSize";
+  customObjectClass: styleObject<boolean> = {'customColor': false, 'customSize': true}
 }
 
 interface Movie{
@@ -89,4 +92,9 @@ interface IfObj<T, U, V>{
 class Val<T, U>{
   readonly name: T;
   readonly id: U;
+}
+
+type styleObject<T> = {
+  customColor: T ;
+  customSize: T ;
 }

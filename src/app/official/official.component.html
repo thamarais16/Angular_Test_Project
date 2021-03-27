@@ -4,7 +4,7 @@
       <li *ngFor="let movie of movies; let i = index;trackBy: trackByFn;">{{movie.title + ' '+
         movie.director}}<button on-click="removeMovies(i)">remove</button></li>
     </ul>
-  </div> 
+  </div>  
 </div>
 <input [ngModel]="title" (ngModelChange)="title = $event"/><br><br>
 <input [ngModel]="director" (ngModelChange)="director = $event"/>
@@ -62,12 +62,13 @@
   </div>
 </div> -->
 
-<!--Custom Atrribute Directive-->
+<!--Custom Atrribute Directive ng class-->
 <div class="card">
   <h1 [style.text-align]="ifDirective.align" style.color={{color}} class="card-header"> Custom Atrribute Directive </h1>
 
   <div class="card-body">
-   <p [tsClass]="'maphia'" >hi</p>
-  
+   <p [tsClass]="customArrayClass" >{{'hi' | uppercase}}</p>
+   <p [tsClass]="customStringClass" >{{'hi' | uppercase}}</p>
+   <p [tsClass]="customObjectClass" >{{'hi' | uppercase}}</p>
   </div>
 </div>
