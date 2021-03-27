@@ -58,10 +58,10 @@ export class OfficialComponent implements OnInit {
   color: string = "red";
 
   vals : Val<string, number>[] = [
-    {name: "Thamarai", id: 1},
-    {name: "Selvan", id: 2},
-    {name: "Thiru", id: 3},
-    {name: "murugan", id: 4}
+    {color: "CYAN", id: 1},
+    {color: "GREEN", id: 2},
+    {color: "YELLOW", id: 3},
+    {color: "ORANGE", id: 4}
   ]
 
   trackByOp(index, obj): number{
@@ -70,12 +70,17 @@ export class OfficialComponent implements OnInit {
 
   txtsize = '25px';  
   colors = ['CYAN', 'GREEN', 'YELLOW'];  
-  myColor = ''; 
+  myColor: string = 'white'; 
 
   customArrayClass: Array<string> = ['customColor', 'customSize'];
   customStringClass: string = "customColor customSize";
-  customObjectClass: styleObject<boolean> = {'customColor': false, 'customSize': true}
-}
+  customObjectClass: styleObject<boolean> = {'customColor': false, 'customSize': true};
+  customStyle;
+  customCss(val){
+    this.customStyle = {'color': val};
+  }
+  }
+  
 
 interface Movie{
   title: string;
@@ -90,7 +95,7 @@ interface IfObj<T, U, V>{
 }
 
 class Val<T, U>{
-  readonly name: T;
+  readonly color: T;
   readonly id: U;
 }
 

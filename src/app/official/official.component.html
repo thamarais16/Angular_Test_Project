@@ -63,12 +63,51 @@
 </div> -->
 
 <!--Custom Atrribute Directive ng class-->
-<div class="card">
-  <h1 [style.text-align]="ifDirective.align" style.color={{color}} class="card-header"> Custom Atrribute Directive </h1>
+<!-- <div class="card">
+  <h1 [style.text-align]="ifDirective.align" style.color={{color}} class="card-header"> Custom Atrribute Directive ng class </h1>
 
   <div class="card-body">
    <p [tsClass]="customArrayClass" >{{'hi' | uppercase}}</p>
    <p [tsClass]="customStringClass" >{{'hi' | uppercase}}</p>
    <p [tsClass]="customObjectClass" >{{'hi' | uppercase}}</p>
   </div>
+</div> -->
+
+<!--Custom Atrribute Directive ng style-->
+<div class="card">
+  <h1 [style.text-align]="ifDirective.align" style.color={{color}} class="card-header"> Custom Atrribute Directive ng style </h1>
+
+  <div class="card-body">
+    <ng-container *ngFor="let val of vals;">
+      <label>
+      <input type="radio" [value]="val.color" ngModel (ngModelChange)="customCss($event)" />
+      {{val.color}}
+      </label>
+    </ng-container>
+    <p [tsStyle]="customStyle" [tsClass]="'customSize'">HI I AM STYLE</p>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <h1>some</h1>
+  </div>
+
+  <div  class="card-body">
+    <select [ngModel]="myColor" (ngModelChange)="myColor = $event">
+      <option value=''   [selected]="true">select</option>
+      <option *ngFor="let val of vals;" [value]="val.color">
+        {{val.color}}
+      </option>
+    </select>
+
+    <ng-container *ngIf="myColor == 'CYAN'; then thenBlock; else elseBlock;"></ng-container>
+    <ng-template #thenBlock>
+      <p [tsStyle]="myColor" [textContent]="'I am cyan'" [tsClass]="'customSize'"></p>
+    </ng-template>
+    <ng-template #elseBlock>
+      <p [tsStyle]="myColor" [textContent]="'I am not cyan'" [tsClass]="'customSize'"></p>
+    </ng-template>
+  </div>
+
 </div>
