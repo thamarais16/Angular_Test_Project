@@ -8,6 +8,7 @@ import { HelloComponent } from './hello.component';
 import { OfficialComponent } from './official/official.component';
 import { TsClassDirective } from './ts-class.directive';
 import { TsStyleDirective } from './ts-style.directive';
+import { TsIfDirective } from './ts-if.directive';
 
 @NgModule({
   imports:      [
@@ -20,7 +21,8 @@ import { TsStyleDirective } from './ts-style.directive';
     HelloComponent, 
     OfficialComponent,
     TsClassDirective,
-    TsStyleDirective
+    TsStyleDirective,
+    TsIfDirective
   ],
   bootstrap:    [ OfficialComponent ]
 })

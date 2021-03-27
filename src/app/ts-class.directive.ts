@@ -3,8 +3,8 @@ import { Directive, ElementRef, Input, Output, HostListener, OnInit } from '@ang
 @Directive({
   selector: '[tsClass]',
 })
-export class TsClassDirective implements OnInit{
- @Input() tsClass: (string | Array<string> | Object);
+export class TsClassDirective {
+ _tsClass: any; 
   
   constructor(
     private el: ElementRef
@@ -12,27 +12,32 @@ export class TsClassDirective implements OnInit{
 
   }
 
-  ngOnInit(): void{
-    if(this.tsClass instanceof Array){
-      this.tsClass.forEach(element => {
+  @Input()
+  set tsClass(val: (string | Array<string> | Object)) {
+    this._tsClass = val;
+    this.updateClass();
+  }
+
+  updateClass(){
+    if(this._tsClass instanceof Array){
+      this._tsClass.forEach(element => {
         this.el.nativeElement.classList.add(element);
       })  
     }
 
-    if(typeof(this.tsClass) == 'string'){
-      let splitString = this.tsClass.split(' ');
+    if(typeof(this._tsClass) == 'string'){
+      let splitString = this._tsClass.split(' ');
       splitString.forEach(element => {
         this.el.nativeElement.classList.add(element);
       }) 
     }
 
-    if(this.tsClass instanceof Object){
-      for(let key in this.tsClass){
-        if(this.tsClass[key] == true){
+    if(this._tsClass instanceof Object){
+      for(let key in this._tsClass){
+        if(this._tsClass[key] == true){
           this.el.nativeElement.classList.add(key);
         }
       }
     }
-   
   }
 }

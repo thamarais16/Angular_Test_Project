@@ -90,7 +90,7 @@
 
 <div class="card">
   <div class="card-header">
-    <h1>some</h1>
+    <h1>ngIF CUSTOM DIRECTIVE</h1>
   </div>
 
   <div  class="card-body">
@@ -101,13 +101,9 @@
       </option>
     </select>
 
-    <ng-container *ngIf="myColor == 'CYAN'; then thenBlock; else elseBlock;"></ng-container>
-    <ng-template #thenBlock>
-      <p [tsStyle]="myColor" [textContent]="'I am cyan'" [tsClass]="'customSize'"></p>
-    </ng-template>
-    <ng-template #elseBlock>
-      <p [tsStyle]="myColor" [textContent]="'I am not cyan'" [tsClass]="'customSize'"></p>
-    </ng-template>
+    <div *tsIf="myColor == 'CYAN'; ">
+      <P>YES</P>
+    </div>
   </div>
 
 </div>
