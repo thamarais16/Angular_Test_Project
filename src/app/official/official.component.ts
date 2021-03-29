@@ -89,6 +89,7 @@ export class OfficialComponent implements OnInit {
     .subscribe(val => { console.log(val)})
   }
 
+  num: number = 6907667490.47037603;
 }
 
 let s = new OfficialComponent();
