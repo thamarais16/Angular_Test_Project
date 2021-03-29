@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { from, Observable, of, pipe} from 'rxjs';
+import { map, filter, tap } from 'rxjs/operators'
 
 @Component({
   selector: 'app-official',
@@ -79,8 +81,18 @@ export class OfficialComponent implements OnInit {
   customCss(val){
     this.customStyle = {'color': val};
   }
+
+  srcArray = from([1, 2, 3, 4]);
+  multiplyBy2() {
+    this.srcArray
+    .pipe(map(val => { return val * 2}))
+    .subscribe(val => { console.log(val)})
   }
-  
+
+}
+
+let s = new OfficialComponent();
+s.multiplyBy2();
 
 interface Movie{
   title: string;
