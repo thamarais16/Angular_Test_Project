@@ -3,7 +3,7 @@
     <ul>
       <li *ngFor="let movie of movies; let i = index;trackBy: trackByFn;">{{movie.title + ' '+
         movie.director}}<button on-click="removeMovies(i)">remove</button></li>
-    </ul>
+    </ul> 
   </div>  
 </div>
 <input [ngModel]="title" (ngModelChange)="title = $event"/><br><br>
@@ -118,7 +118,14 @@
   <div  class="card-body">
     <input type="number" [value]="num" on-input="num = $any(n1).value" #n1/>
 
-    <h3>{{num | number:'1.0-0' }}</h3>
+    <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">{{num | number:'1.0-0' }}</p>
+
+    <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">{{dates | date:'M/d/yy, hh:mm a'}}</p>
+    <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">{{dates | date:'MMM, d, y, hh:mm:ss a'}}</p>
+    <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">{{dates | date:'MMMM, d, y, hh:mm:ss a z'}}</p>
+    <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">{{dates | date:'EEEE, MMMM, d, y, hh:mm:ss a zzzz'}}</p>
+   <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">{{dates | date:'dd/MM/yyyy'}}</p>
+
   </div>
 
 </div>

@@ -90,6 +90,7 @@ export class OfficialComponent implements OnInit {
   }
 
   num: number = 6907667490.47037603;
+  dates: number = 1617171600929;
 }
 
 let s = new OfficialComponent();
