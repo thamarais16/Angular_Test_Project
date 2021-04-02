@@ -116,20 +116,21 @@
   </div>
 
   <div  class="card-body">
-    <input type="number"  [value]="num" on-input="num = $any(n1).value" #n1  />
-    
-    <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">uppercase: {{ 'thamarai selvan' | uppercase }}</p>
-    <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">lowercase: {{ 'thamarai selvan' | lowercase }}</p>
-    <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">slice: {{ $any(num) | slice:0:5 }}</p>
-    <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">{{num | number:'1.1-2' }}</p>
-    <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">{{num | percent }}</p>
-    <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">{{num | currency:'INR':true }}</p>
+    <div style="display: none">
+      <input type="number"  [value]="num" on-input="num = $any(n1).value" #n1  />
+      
+      <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">uppercase: {{ 'thamarai selvan' | uppercase }}</p>
+      <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">lowercase: {{ 'thamarai selvan' | lowercase }}</p>
+      <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">slice: {{ $any(num) | slice:0:5 }}</p>
+      <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">{{num | number:'1.1-2' }}</p>
+      <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">{{num | percent }}</p>
+      <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">{{num | currency:'INR':true }}</p>
 
-    <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">Short Date and Time: {{dates | date:'M/d/yy hh:mm a'}}</p>
-    <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">Medium Date and Time: {{dates | date:'MMM d y hh:mm:ss a'}}</p>
-    <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">Long Date and Time: {{dates | date:'MMMM d y hh:mm:ss a z'}}</p>
-    <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">Full Date and Time: {{dates | date:'GGGG EEEE MMMM d y hh:mm:ss a zzzz'}}</p>
-
+      <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">Short Date and Time: {{dates | date:'M/d/yy hh:mm a'}}</p>
+      <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">Medium Date and Time: {{dates | date:'MMM d y hh:mm:ss a'}}</p>
+      <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">Long Date and Time: {{dates | date:'MMMM d y hh:mm:ss a z'}}</p>
+      <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">Full Date and Time: {{dates | date:'GGGG EEEE MMMM d y hh:mm:ss a zzzz'}}</p>
+    </div>
   </div>
 
 </div>
