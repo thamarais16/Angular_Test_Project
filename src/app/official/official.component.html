@@ -121,7 +121,7 @@
       
       <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">uppercase: {{ 'thamarai selvan' | uppercase }}</p>
       <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">lowercase: {{ 'thamarai selvan' | lowercase }}</p>
-      <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">slice: {{ $any(num) | slice:0:5 }}</p>
+      <!-- <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">slice: {{ $any(num) | slice:0:5 }}</p> -->
       <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">{{num | number:'1.1-2' }}</p>
       <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">{{num | percent }}</p>
       <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">{{num | currency:'INR':true }}</p>
@@ -130,6 +130,23 @@
       <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">Medium Date and Time: {{dates | date:'MMM d y hh:mm:ss a'}}</p>
       <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">Long Date and Time: {{dates | date:'MMMM d y hh:mm:ss a z'}}</p>
       <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">Full Date and Time: {{dates | date:'GGGG EEEE MMMM d y hh:mm:ss a zzzz'}}</p>
+    </div>
+    
+    
+    <div style="display: block;">
+      <p *ngIf="(obsValue | async); else elB">
+        {{obsValue | async}}</p>
+      
+      <ng-template #elB>
+        <p> 
+        Loading...</p>
+      </ng-template>
+
+      <p *ngIf="(obsValue | async); else elB">
+        {{obsValue | async}}</p>
+
+      <p *ngIf="(obsValue | async) as vals; else elB">{{vals}}</p>
+       
     </div>
   </div>
 

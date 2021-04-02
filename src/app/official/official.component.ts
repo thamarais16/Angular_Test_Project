@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { from, Observable, of, pipe} from 'rxjs';
-import { map, filter, tap } from 'rxjs/operators'
+import { map, filter, tap, shareReplay } from 'rxjs/operators'
 
 @Component({
   selector: 'app-official',
@@ -12,7 +12,9 @@ export class OfficialComponent implements OnInit {
   movies: Array<Movie>;
   title: string;
   director: string;
-  constructor() { }
+  constructor() {
+
+   }
 
   ngOnInit() {
      this.Refresh();
@@ -91,8 +93,31 @@ export class OfficialComponent implements OnInit {
 
   num: number = 6907667490.47037603;
   dates: number = 1617171600929;
+
+  // obsValue = {
+  //   name: "Thamarai Selvan",
+  //   balance: 200,
+  //   display(val: number) {
+  //     return new Promise((res, rej)=>{
+  //       this.balance -= val;
+  //       setTimeout(()=> {
+  //         res(`${this.name} has balance of ${this.balance}`);
+  //       },1000);
+  //     });
+  //   }
+  // }
+
+  obsValue = new Observable((observer)=>{
+    console.log("Observable starts");
+    setTimeout(()=>{
+       console.log("Returns value")
+      observer.next("90000");
+    },9000); 
+  }).pipe(shareReplay());
+
 }
 
+//End of component//
 let s = new OfficialComponent();
 s.multiplyBy2();
 

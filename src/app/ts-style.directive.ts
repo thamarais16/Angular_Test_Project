@@ -20,7 +20,6 @@ export class TsStyleDirective{
       for(let keys in this._tsStyle){
         let key = keys;
         this.el.nativeElement.style[key] = (this._tsStyle[key] || 'black');
-        console.log(this.el.nativeElement.style[key]);
       }
     }
   }
