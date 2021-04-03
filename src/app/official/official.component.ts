@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { from, Observable, of, pipe} from 'rxjs';
@@ -12,6 +13,7 @@ export class OfficialComponent implements OnInit {
   movies: Array<Movie>;
   title: string;
   director: string;
+http: HttpClient;
   constructor() {
 
    }
@@ -107,13 +109,18 @@ export class OfficialComponent implements OnInit {
   //   }
   // }
 
-  obsValue = new Observable((observer)=>{
-    console.log("Observable starts");
+  obsValue = new Observable( (observer) =>{
     setTimeout(()=>{
-       console.log("Returns value")
-      observer.next("90000");
-    },9000); 
+      observer.next("Hi i am observable");
+    },9000);
   }).pipe(shareReplay());
+
+  hounds: Observable<any> = new Observable((res)=>{
+    setTimeout(()=>{
+      res.next({"message":["afghan","basset","blood","english","ibizan","plott","walker"],"status":"success"})
+    },10000);
+  }).pipe(shareReplay());
+
 
 }
 

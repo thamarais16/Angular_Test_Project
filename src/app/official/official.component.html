@@ -116,12 +116,11 @@
   </div>
 
   <div  class="card-body">
-    <div style="display: none;">
+    <!-- <div style="display: none;">
       <input type="number"  [value]="num" on-input="num = $any(n1).value" #n1  />
       
       <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">uppercase: {{ 'thamarai selvan' | uppercase }}</p>
       <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">lowercase: {{ 'thamarai selvan' | lowercase }}</p>
-      <!-- <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">slice: {{ $any(num) | slice:0:5 }}</p> -->
      <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">number: {{ '5343' | currency:'INR ':false }}</p>
      <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">Date: {{ dates | date:'short' }}</p>
      <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">Date: {{ dates | date:'M/d/yy, h:mm a' }}</p>
@@ -133,23 +132,40 @@
       <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">Date: {{ dates | date:'EEEE, MMMM, d, y, h:mm:ss a zzzz' }}</p>
 
     <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">Date: {{ dates | date:'E, EE, EEE, EEEE, EEEEE, M, MM, MMM, MMMM, d, dd, y, yy, yyy, yyyy, H, HH, m, mm, s, ss, a, aa, aaa, aaaa, aaaaa z, zzzz' }}</p>
-    </div>
+    </div> -->
     
     
     <div style="display: block;">
-      <p *ngIf="(obsValue | async); else elB">
-        {{obsValue | async}}</p>
-      
+      <ng-container *ngIf="(obsValue | async) as value; else elB">
+        <p>{{ value }}</p>
+      </ng-container>
+
+      <ng-container *ngIf="(obsValue | async); else elB">
+        <p> This is second block </p>
+      </ng-container>
+
       <ng-template #elB>
-        <p> 
-        Loading...</p>
+        <p>Loading please wait...</p>
       </ng-template>
 
-      <p *ngIf="(obsValue | async); else elB">
-        {{obsValue | async}}</p>
+      <ul >
+        <li *ngFor="let hounds of (hounds | async)?.message">
+          {{hounds}}
+        </li>
+      </ul>
 
-      <p *ngIf="(obsValue | async) as vals; else elB">{{vals}}</p>
-       
+
+ 
+      <div *ngIf="(hounds | async) as breeds; else elB">
+        <ul>
+          <li *ngFor="let breed of breeds.message">{{breed}}</li>
+        </ul> 
+      </div>
+
+
+
+
+
     </div>
   </div>
 
