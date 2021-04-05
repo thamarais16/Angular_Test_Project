@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-pipe',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PipeComponent implements OnInit {
 
-  constructor() { } 
+  toDate: any;
+
+  constructor(
+    private _date: DatePipe,
+  ) { } 
 
   ngOnInit() {
+    this.toDate = this._date.transform("2020-05-01", 'EEEE MMMM dd y hh:mm a');
   }
 
 }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'; 
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
@@ -10,6 +10,7 @@ import { TsClassDirective } from './ts-class.directive';
 import { TsStyleDirective } from './ts-style.directive';
 import { TsIfDirective } from './ts-if.directive';
 import { PipeComponent } from  './pipe/pipe.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   imports:      [
@@ -26,6 +27,7 @@ import { PipeComponent } from  './pipe/pipe.component';
     TsIfDirective,
     PipeComponent
   ],
-  bootstrap:    [ PipeComponent ]
+  bootstrap:    [ PipeComponent ],
+  providers: [DatePipe]
 })
 export class AppModule {}
