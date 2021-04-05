@@ -26,6 +26,6 @@ import { PipeComponent } from  './pipe/pipe.component';
     TsIfDirective,
     PipeComponent
   ],
-  bootstrap:    [ OfficialComponent ]
+  bootstrap:    [ PipeComponent ]
 })
 export class AppModule {}
