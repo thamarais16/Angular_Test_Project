@@ -9,6 +9,7 @@ import { OfficialComponent } from './official/official.component';
 import { TsClassDirective } from './ts-class.directive';
 import { TsStyleDirective } from './ts-style.directive';
 import { TsIfDirective } from './ts-if.directive';
+import { PipeComponent } from  './pipe/pipe.component';
 
 @NgModule({
   imports:      [
@@ -22,7 +23,8 @@ import { TsIfDirective } from './ts-if.directive';
     OfficialComponent,
     TsClassDirective,
     TsStyleDirective,
-    TsIfDirective
+    TsIfDirective,
+    PipeComponent
   ],
   bootstrap:    [ OfficialComponent ]
 })
