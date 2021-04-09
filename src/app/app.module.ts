@@ -14,6 +14,7 @@ import { DatePipe, CurrencyPipe, SlicePipe, UpperCasePipe, LowerCasePipe, TitleC
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { TempConverterPipe } from './temp-converter.pipe';
+import { DirectivesComponent } from './directives/directives.component';
 
 @NgModule({
   imports:      [
@@ -31,7 +32,8 @@ import { TempConverterPipe } from './temp-converter.pipe';
     PipeComponent,
     ChildComponent,
     ParentComponent,
-    TempConverterPipe
+    TempConverterPipe,
+    DirectivesComponent
   ],
   bootstrap:    [ OfficialComponent ],
   providers: [
