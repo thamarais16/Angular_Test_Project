@@ -5,6 +5,11 @@
   <div class="card-body">
     <p>Farenheit is : <input type="text" [(ngModel)]="fahrenheit" />
      celsius is : {{fahrenheit | tempConverter:'C'}}</p>
+
+    <p>
+      celsius is: <input type="text" [(ngModel)]="celsius" /> 
+      Fahrenheit: {{celsius | tempConverter:'F'}}
+    </p>
   </div> 
 
 </div>
