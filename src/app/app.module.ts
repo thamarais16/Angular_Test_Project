@@ -10,7 +10,7 @@ import { TsClassDirective } from './ts-class.directive';
 import { TsStyleDirective } from './ts-style.directive';
 import { TsIfDirective } from './ts-if.directive';
 import { PipeComponent } from  './pipe/pipe.component';
-import { DatePipe } from '@angular/common';
+import { DatePipe, CurrencyPipe, SlicePipe, UpperCasePipe, LowerCasePipe, TitleCasePipe, PercentPipe } from '@angular/common';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { TempConverterPipe } from './temp-converter.pipe';
@@ -34,6 +34,14 @@ import { TempConverterPipe } from './temp-converter.pipe';
     TempConverterPipe
   ],
   bootstrap:    [ OfficialComponent ],
-  providers: [DatePipe]
+  providers: [
+    DatePipe,
+    CurrencyPipe,
+    SlicePipe, 
+    UpperCasePipe, 
+    LowerCasePipe, 
+    TitleCasePipe, 
+    PercentPipe
+    ]
 })
 export class AppModule {}
