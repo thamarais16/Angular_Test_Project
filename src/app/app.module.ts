@@ -11,6 +11,8 @@ import { TsStyleDirective } from './ts-style.directive';
 import { TsIfDirective } from './ts-if.directive';
 import { PipeComponent } from  './pipe/pipe.component';
 import { DatePipe } from '@angular/common';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/parent.component';
 
 @NgModule({
   imports:      [
@@ -25,7 +27,9 @@ import { DatePipe } from '@angular/common';
     TsClassDirective,
     TsStyleDirective,
     TsIfDirective,
-    PipeComponent
+    PipeComponent,
+    ChildComponent,
+    ParentComponent
   ],
   bootstrap:    [ PipeComponent ],
   providers: [DatePipe]

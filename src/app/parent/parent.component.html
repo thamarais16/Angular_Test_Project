@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-header">
+    <h2>Parent Component</h2>
+  </div>
+  <div class="card-body">
+    <button on-click="incremet()">incremet</button>
+    <button on-click="decremet()">decremet</button>
+  </div>
+
+  <div class="card-header">
+    <h2>Child Component</h2>
+  </div>
+  <div class="card-body">
+    <app-child [count]="counter"></app-child>
+  </div>
+</div>
