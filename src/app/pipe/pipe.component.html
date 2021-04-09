@@ -15,11 +15,27 @@
     </div>
   </div> 
 
-  <div style="display: block;">
+  <div style="display: none;">
     <div class="card-body">
      <p>{{toDate}}</p>
      <p>{{currency}}</p>
     </div>
   </div> 
+
+  <div style="display: block;">
+    <div class="card-body">
+     <ol >
+       <li *ngFor="let breed of breeds | keyvalue: orderOriginal">
+         {{breed.key}} --> {{breed.value}}
+       </li>
+     </ol>
+     <ol >
+       <li *ngFor="let breed of maps | keyvalue">
+         {{breed.key}} --> {{breed.value}}
+       </li>
+     </ol>
+    </div>
+  </div> 
+
 
 </div>
