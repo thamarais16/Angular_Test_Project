@@ -3,7 +3,7 @@
     <h3>Welcome Directives</h3>
   </div>
 
-  <div style="display: block;">
+  <div style="display: none;">
     <div class="card-body">
       <select [(ngModel)]="names">
         <ng-container *ngFor="let breed of (breeds | keyvalue)">
@@ -45,6 +45,27 @@
       <ng-template #bull> 
           <p>I AM BULL</p>
         </ng-template>
+    </div>
+  </div> 
+
+  <div style="display: block;">
+    <div class="card-body">
+      <input type="checkbox" [(ngModel)]="checky" />
+      <p *ngIf= "checky; else elB">
+        I am checked Man.
+      </p>
+      <ng-template #elB>
+        <p>I am sorry Un-checked Man.</p>
+      </ng-template>
+
+      <p *ngIf= "checky; then tlB; else elB"></p>
+      <ng-template #tlB>
+        <p> I am checked Man.</p>
+      </ng-template>
+      <ng-template #elB>
+        <p>I am sorry Un-checked Man.</p>
+      </ng-template>
+      
     </div>
   </div> 
 

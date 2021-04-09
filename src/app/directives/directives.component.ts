@@ -22,6 +22,8 @@ export class DirectivesComponent implements OnInit {
 
     names: string;
 
+    checky: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
