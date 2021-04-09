@@ -1,5 +1,7 @@
 import { Component, OnInit, LOCALE_ID, Inject } from '@angular/core';
 import { DatePipe, CurrencyPipe, formatCurrency, getCurrencySymbol, getLocaleDateFormat, KeyValue } from '@angular/common';
+import { Observable } from 'rxjs';
+import { shareReplay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-pipe',
@@ -30,6 +32,7 @@ export class PipeComponent implements OnInit {
       ['b', 2],
       ['c', 3]
     ])
+    
 
 
   constructor(
@@ -49,5 +52,19 @@ export class PipeComponent implements OnInit {
     //return a.value.length > b.value.length ? -1 : (a.value.length > b.value.length) ? 0: 1;
     return a.value.length > b.value.length ? 1 : (a.value.length > b.value.length) ? 0: -1;
   }
+
+  obsValue: Observable<any> = new Observable(obs => {
+    console.log("Observable");
+    setTimeout(()=>{
+      obs.next("Hi I am Observable with async pipe");
+    },10000);
+  }).pipe(shareReplay());
+
+  obsValue2: Observable<any> = new Observable(obs => {
+    console.log("Observable");
+    setTimeout(()=>{
+      obs.next({"message":["afghan","basset","blood","english","ibizan","plott","walker"],"status":"success"});
+    },10000);
+  }).pipe(shareReplay());
 
 }

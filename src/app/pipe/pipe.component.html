@@ -22,7 +22,7 @@
     </div>
   </div> 
 
-  <div style="display: block;">
+  <div style="display: none;">
     <div class="card-body">
      <ol >
        <li *ngFor="let breed of breeds | keyvalue: orderOriginal">
@@ -34,6 +34,30 @@
          {{breed.key}} --> {{breed.value}}
        </li>
      </ol>
+    </div>
+  </div> 
+
+  <div style="display: block;">
+    <div class="card-body">
+     <ng-container *ngIf="(obsValue | async); else elB">
+       <p>{{obsValue | async }}</p>
+     </ng-container>
+     
+     <!-- <ng-container *ngIf="(obsValue2 | async)?.message as ob; else elB"> -->
+       <ul>
+         <li *ngFor="let val of (obsValue2 | async)?.message"> 
+           {{val}}
+         </li>
+       </ul>
+     <!-- </ng-container> -->
+     
+     
+     <ng-template #elB>
+       <p>Loading Please Wait..</p>
+     </ng-template>
+
+
+     
     </div>
   </div> 
 
