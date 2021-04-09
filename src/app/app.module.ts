@@ -13,6 +13,7 @@ import { PipeComponent } from  './pipe/pipe.component';
 import { DatePipe } from '@angular/common';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { Logger } from './log.ts';
 
 @NgModule({
   imports:      [
@@ -32,6 +33,6 @@ import { ChildComponent } from './child/child.component';
     ParentComponent
   ],
   bootstrap:    [ OfficialComponent ],
-  providers: [DatePipe]
+  providers: [DatePipe, Logger]
 })
 export class AppModule {}
