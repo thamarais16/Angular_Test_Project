@@ -13,7 +13,7 @@ import { PipeComponent } from  './pipe/pipe.component';
 import { DatePipe } from '@angular/common';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
-import { Logger } from './log.ts';
+import { TempConverterPipe } from './temp-converter.pipe';
 
 @NgModule({
   imports:      [
@@ -30,9 +30,10 @@ import { Logger } from './log.ts';
     TsIfDirective,
     PipeComponent,
     ChildComponent,
-    ParentComponent
+    ParentComponent,
+    TempConverterPipe
   ],
   bootstrap:    [ OfficialComponent ],
-  providers: [DatePipe, Logger]
+  providers: [DatePipe]
 })
 export class AppModule {}

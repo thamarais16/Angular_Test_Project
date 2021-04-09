@@ -9,7 +9,8 @@ import { DatePipe } from '@angular/common';
 export class PipeComponent implements OnInit {
 
   toDate: any;
-
+  fahrenheit: number;
+  celsius: number;
   constructor(
     private _date: DatePipe,
   ) { } 

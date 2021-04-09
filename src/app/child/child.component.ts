@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, OnChanges, SimpleChange, SimpleChanges} from '@angular/core';
-import { Logger } './log.ts'
 
 @Component({
   selector: 'app-child',
@@ -14,7 +13,8 @@ export class ChildComponent implements OnInit, OnChanges {
     console.log(changes);
     for(let property in changes){
       if(property === 'count'){
-        console.log
+        console.log('previous value', changes[property].previousValue);
+        console.log('current value', changes[property].currentValue);
       }
     }
   }
