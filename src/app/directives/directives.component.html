@@ -5,7 +5,46 @@
 
   <div style="display: block;">
     <div class="card-body">
-      
+      <select [(ngModel)]="names">
+        <ng-container *ngFor="let breed of (breeds | keyvalue)">
+          <option  value="{{breed.key}}">
+          {{breed.key}}
+        </option>
+        </ng-container>
+      </select>
+
+      <ng-container [ngSwitch]="names">
+        <ng-container *ngSwitchCase="'bulldog'"> 
+          <p>Its bull dog</p>
+        </ng-container>
+        <ng-container *ngSwitchCase="'corgi'"> 
+          <p>Its corgi</p>
+        </ng-container>
+        <ng-container *ngSwitchDefault> 
+          <p>Its nothing</p>
+        </ng-container>
+        <ng-container *ngSwitchDefault> 
+          <p>Its nothing</p>
+        </ng-container>
+      </ng-container>
+
+      <ng-container [ngSwitch]="names">
+        <ng-template [ngSwitchCase]="'bulldog'"> 
+          <ng-container *ngTemplateOutlet="bull"></ng-container>
+        </ng-template>
+        <ng-template [ngSwitchCase]="'corgi'"> 
+          <p>Its corgi</p>
+        </ng-template>
+        <ng-template ngSwitchDefault> 
+          <p>Its nothing</p>
+        </ng-template>
+        <ng-template ngSwitchDefault> 
+          <p>Its nothing</p>
+        </ng-template>
+    </ng-container>
+      <ng-template #bull> 
+          <p>I AM BULL</p>
+        </ng-template>
     </div>
   </div> 
 
