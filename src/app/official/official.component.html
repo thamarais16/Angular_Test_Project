@@ -110,13 +110,13 @@
 </div> -->
 
 <!-- pipes-->
-<div class="card" style="display: none">
+<!-- <div class="card" style="display: none;">
   <div class="card-header">
     <h1> Built in Pipe</h1>
   </div>
 
   <div  class="card-body">
-    <!-- <div style="display: none;">
+    <div style="display: none;">
       <input type="number"  [value]="num" on-input="num = $any(n1).value" #n1  />
       
       <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">uppercase: {{ 'thamarai selvan' | uppercase }}</p>
@@ -132,10 +132,10 @@
       <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">Date: {{ dates | date:'EEEE, MMMM, d, y, h:mm:ss a zzzz' }}</p>
 
     <p [tsStyle]="{'text-align': 'center', 'font-weight': 'bold'}">Date: {{ dates | date:'E, EE, EEE, EEEE, EEEEE, M, MM, MMM, MMMM, d, dd, y, yy, yyy, yyyy, H, HH, m, mm, s, ss, a, aa, aaa, aaaa, aaaaa z, zzzz' }}</p>
-    </div> -->
+    </div>
     
     
-    <div style="display: block;">
+    <div >
       <ng-container *ngIf="(obsValue | async) as value; else elB">
         <p>{{ value }}</p>
       </ng-container>
@@ -169,6 +169,6 @@
     </div>
   </div>
 
-</div>
+</div> -->
 
 <app-parent></app-parent>

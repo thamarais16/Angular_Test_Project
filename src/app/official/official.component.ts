@@ -5,7 +5,7 @@ import { from, Observable, of, pipe} from 'rxjs';
 import { map, filter, tap, shareReplay } from 'rxjs/operators'
 
 @Component({
-  selector: 'app-official',
+  selector: '[app-official]',
   templateUrl: './official.component.html',
   styleUrls: ['./official.component.css']
 })

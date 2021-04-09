@@ -12,7 +12,7 @@ import { TsIfDirective } from './ts-if.directive';
 import { PipeComponent } from  './pipe/pipe.component';
 import { DatePipe } from '@angular/common';
 import { ParentComponent } from './parent/parent.component';
-import { ChildComponent } from './child/parent.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   imports:      [
@@ -31,7 +31,7 @@ import { ChildComponent } from './child/parent.component';
     ChildComponent,
     ParentComponent
   ],
-  bootstrap:    [ PipeComponent ],
+  bootstrap:    [ OfficialComponent ],
   providers: [DatePipe]
 })
 export class AppModule {}
