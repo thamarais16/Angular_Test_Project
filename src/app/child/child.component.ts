@@ -2,7 +2,7 @@ import { Component, OnInit, Input, OnChanges, SimpleChange, SimpleChanges} from 
 
 @Component({
   selector: 'app-child',
-  templateUrl: './child.component.html',
+  templateUrl: './child.component.html', 
   styleUrls: ['./child.component.css'],
   //inputs: ['count']
 })
