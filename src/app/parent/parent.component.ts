@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChildComponent } from './child/child.component';
 
 @Component({
   selector: 'app-parent',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./parent.component.css']
 })
 export class ParentComponent implements OnInit {
-  counter: number = 5;
+  counter: number = 0;
+  @ViewChild(ChildComponent) child: ChildComponent;
 
   constructor() { }
 
@@ -19,6 +21,10 @@ export class ParentComponent implements OnInit {
 
   decrement(): number{
     return this.counter--;
+  }
+
+  changedCount(val: number){
+    this.counter = val;
   }
 
 }

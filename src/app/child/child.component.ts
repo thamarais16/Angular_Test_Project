@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChange, SimpleChanges} from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChange, SimpleChanges, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -7,19 +7,37 @@ import { Component, OnInit, Input, OnChanges, SimpleChange, SimpleChanges} from 
   //inputs: ['count']
 })
 export class ChildComponent implements OnInit, OnChanges {
-  @Input('MyCount') count: number;
+  
+  public _count: number = 0;
+  //@Output() countChange: EventEmitter<number> = new EventEmitter();
+
   constructor() { }
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
-    for(let property in changes){
-      if(property === 'count'){
-        console.log('previous value', changes[property].previousValue);
-        console.log('current value', changes[property].currentValue);
-      }
-    }
+
+  @Input('MyCount') 
+  set count(value: number){ 
+    console.log(value);
+    this._count = value;
+  }
+
+  get count(): number{
+    return this._count;
   }
 
   ngOnInit() {
+  }
+
+  ngOnChanges(changes: SimpleChanges){
+    console.log(changes);
+  }
+
+  increment(){
+    this._count++;
+    //this.countChange.emit(this._count);
+  }
+
+  decrement(){
+    this._count--;
+    //this.countChange.emit(this._count);
   }
 
 }
