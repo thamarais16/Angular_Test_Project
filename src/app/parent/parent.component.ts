@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ChildComponent } from './child/child.component';
 
 @Component({
   selector: 'app-parent',
@@ -8,7 +7,6 @@ import { ChildComponent } from './child/child.component';
 })
 export class ParentComponent implements OnInit {
   counter: number = 0;
-  @ViewChild(ChildComponent) child: ChildComponent;
 
   constructor() { }
 
