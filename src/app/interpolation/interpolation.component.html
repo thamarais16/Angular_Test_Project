@@ -63,4 +63,11 @@
     <input type="text" ngModel (ngModelChange)="vals">
     <p>you entered {{names}}</p>
   </div>
+
+  <div class="card-body" style.display="{{'block'}}">
+    <p *scIf="thamas">This is Thamarai Selvan</p>
+    <p *scIf="!thiru">This is Thiru Murugan</p>
+  </div>
+
+
 </div> 

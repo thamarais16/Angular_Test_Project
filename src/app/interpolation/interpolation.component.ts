@@ -17,7 +17,8 @@ export class InterpolationComponent implements OnInit {
   name: string ="";
   names: string ="";
   valss: string = "";
-  
+  thamas: boolean = true;
+  thiru: boolean = false;
   constructor(
    private _date: DatePipe,
   ) { }
