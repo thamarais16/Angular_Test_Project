@@ -15,6 +15,7 @@ import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { TempConverterPipe } from './temp-converter.pipe';
 import { DirectivesComponent } from './directives/directives.component';
+import { InterpolationComponent } from './interpolation/interpolation.component';
 
 @NgModule({
   imports:      [
@@ -33,7 +34,8 @@ import { DirectivesComponent } from './directives/directives.component';
     ChildComponent,
     ParentComponent,
     TempConverterPipe,
-    DirectivesComponent
+    DirectivesComponent,
+    InterpolationComponent
   ],
   bootstrap:    [ OfficialComponent ],
   providers: [
