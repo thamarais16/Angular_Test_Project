@@ -1,6 +1,6 @@
 <div class="card">
   <div class="card-header">
-    <h2>{{title}} </h2>
+    <h2>Welcome {{title}} </h2>
   </div>
 
   <div class="card-body" style.display="{{'none'}}">
@@ -13,7 +13,7 @@
     <p >{{el.value | slice:0:3}}</p>
   </div>
 
-  <div class="card-body" style.display="{{'block'}}">
+  <div class="card-body" style.display="{{'none'}}">
     <div [innerHTML]="elements"></div>
     <p [innerText]="stings + ' Thamarai' ">
     <img [src]="myImage" height="100" width="100" >
@@ -22,4 +22,32 @@
     <p [style.color]="myColor" [innerText]="stings + ' Thamarai' "></p>
     <button [disabled]="isDisabled">Click</button>
   </div>
+
+  <div class="card-body" [style.display]="'none'">
+    <!-- <button [attr.aria-label]="closeLabel">x</button> -->
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th [attr.colspan]="'2'">{{'id' | titlecase}}</th>
+          <th>{{'name' | titlecase}}</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td [attr.colspan]="'2'">{{'2' | titlecase}}</td>
+          <td>{{'ThamaraiSelvan' | titlecase}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card-body" style.display="{{'block'}}">
+    <p (click)="vals()" id="pTag">my name is {{name}}</p>
+    <input type="text" on-input="name = $any(vels).value" value="" #vels/>
+    
+    <p>my name is {{names}}</p>
+    <input type="text" value="" on-input="dis($event)" #vels/>
+</div>
 </div> 

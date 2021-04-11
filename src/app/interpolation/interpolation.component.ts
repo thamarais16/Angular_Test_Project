@@ -7,12 +7,16 @@
   styleUrls: ['./interpolation.component.css']
 })
 export class InterpolationComponent implements OnInit {
-  title= "Welcome Interpolation";
+  title= "Angular Basics";
   myImage: string = "https://homepages.cae.wisc.edu/~ece533/images/fruits.png";
   myColor: string ="orange";
   elements: string = "<p>Hi <b>Thamrai Selvan</b></p>"
   stings: string = "Concate";
   isDisabled: boolean = false;
+  closeLabel: string = "close";
+  name: string ="";
+  names: string ="";
+
   constructor(
    private _date: DatePipe,
   ) { }
@@ -26,6 +30,14 @@ export class InterpolationComponent implements OnInit {
 
   a(): any{
     return 9;
+  }
+
+  dis(event: any): string{
+    return this.names = event.target.value;
+  }
+
+  vals(val?: any){
+    document.getElementById("pTag").style.color = "red";
   }
 
 
