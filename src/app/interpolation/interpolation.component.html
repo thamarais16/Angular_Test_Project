@@ -43,11 +43,24 @@
     </table>
   </div>
 
+  <div class="card-body" style.display="{{'none'}}">
+    <input type="text" [value]="name" (input)="name = $any($event.target).value">
+    <p>you entered {{name}}</p>
+    <button on-click="name = ''; display()">clear value</button><br/><br/><br/>
+
+    <input type="text" [(ngModel)]="names"/>
+    <p>you entered {{names}}</p>
+    <button on-click="names = '';">clear value</button>
+  </div>
+
   <div class="card-body" style.display="{{'block'}}">
-    <p (click)="vals()" id="pTag">my name is {{name}}</p>
-    <input type="text" on-input="name = $any(vels).value" value="" #vels/>
-    
-    <p>my name is {{names}}</p>
-    <input type="text" value="" on-input="dis($event)" #vels/>
-</div>
+    <select type="text"  [ngModel]= "valss" (ngModelChange)="valss = $event" >
+      <option value="a">a</option>
+      <option value="b">b</option>
+    </select>
+     <p>you select {{valss}}</p>
+
+    <input type="text" ngModel (ngModelChange)="vals">
+    <p>you entered {{names}}</p>
+  </div>
 </div> 

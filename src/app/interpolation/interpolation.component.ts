@@ -16,7 +16,8 @@ export class InterpolationComponent implements OnInit {
   closeLabel: string = "close";
   name: string ="";
   names: string ="";
-
+  valss: string = "";
+  
   constructor(
    private _date: DatePipe,
   ) { }
@@ -33,11 +34,15 @@ export class InterpolationComponent implements OnInit {
   }
 
   dis(event: any): string{
-    return this.names = event.target.value;
+    return this.names = event;
   }
 
   vals(val?: any){
     document.getElementById("pTag").style.color = "red";
+  }
+
+  display(){
+    alert(this.name);
   }
 
 
