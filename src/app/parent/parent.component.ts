@@ -7,22 +7,14 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class ParentComponent implements OnInit {
   counter: number = 0;
-
+  name: any = "Thams";
   constructor() { }
 
   ngOnInit() {
   } 
 
-  increment(): number{
-    return this.counter++;
-  }
-
-  decrement(): number{
-    return this.counter--;
-  }
-
-  changedCount(val: number){
-    this.counter = val;
+  changeName(val: any): void{
+    this.name = val;
   }
 
 }

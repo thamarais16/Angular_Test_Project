@@ -2,17 +2,15 @@
   <div class="card-header">
     <h2>Parent Component</h2>
   </div>
-  <div class="card-body">
-    counter value is: 
-    <button on-click="increment()">increment</button>
-    <button on-click="decrement()">decrement</button>
+  <div class="card-body"> 
+    <input type="text" value = "name" [childText]="name" (emitedChildValue)="changeName($event)" app-child />
+    your name is: {{name}}
   </div>
 
-  <div class="card-header">
+  <!-- <div class="card-header">
     <h2>Child Component</h2>
   </div>
   <div class="card-body">
-   <!-- <app-child [MyCount]="counter" (countChange)="changedCount($event)"></app-child> -->
-   <!-- <app-child #child></app-child> -->
-  </div>
+    
+  </div> -->
 </div> 
