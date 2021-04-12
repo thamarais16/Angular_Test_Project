@@ -3,7 +3,7 @@
     <h2>Parent Component</h2>
   </div>
   <div class="card-body"> 
-    <input type="text" value = "name" [childText]="name" (emitedChildValue)="changeName($event)" app-child />
+    <input type="text"  [childText]="name" (emitedChildValue)="changeName($event)" app-child />
     your name is: {{name}}
   </div>
 
