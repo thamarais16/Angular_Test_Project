@@ -1,60 +1,65 @@
-import { ChangeDetectionStrategy, Component, OnInit, Input, OnChanges, SimpleChange, SimpleChanges, Output, EventEmitter, ElementRef} from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  Input,
+  OnChanges,
+  SimpleChange,
+  SimpleChanges,
+  Output,
+  EventEmitter,
+  ElementRef
+} from "@angular/core";
 
 @Component({
-  selector: 'app-child',
-  templateUrl: './child.component.html', 
-  styleUrls: ['./child.component.css'],
+  selector: "app-child",
+  templateUrl: "./child.component.html",
+  styleUrls: ["./child.component.css"],
   //inputs: ['count']
   changeDetection: ChangeDetectionStrategy.Default
 })
 export class ChildComponent {
-  
   @Input() message: string;
   customer: Customer = new Customer();
 
-  constructor( 
-    private elem: ElementRef
-  ){
-    console.log("child constructor");   
+  constructor(private elem: ElementRef) {
+    console.log("child constructor");
   }
 
-  ngOnInit(){
-    console.log("child ngOnInit");   
+  ngOnInit() {
+    console.log("child ngOnInit");
   }
 
-  ngOnChanges(){
-    console.log("child ngOnChanges");   
+  ngOnChanges() {
+    console.log("child ngOnChanges");
   }
 
-
-  ngDoCheck(){
-    console.log("child ngDoCheck");    
+  ngDoCheck() {
+    console.log("child ngDoCheck");
   }
 
-  ngAfterContentInit(){
-    console.log("child ngAfterContentInit");    
+  ngAfterContentInit() {
+    console.log("child ngAfterContentInit");
   }
 
-  ngAfterContentChecked(){
-    console.log("child ngAfterContentChecked");   
+  ngAfterContentChecked() {
+    console.log("child ngAfterContentChecked");
   }
 
-  ngAfterViewInit(){
-    console.log("child ngAfterViewInit");   
+  ngAfterViewInit() {
+    console.log("child ngAfterViewInit");
   }
 
-  ngAfterViewChecked(){
-    console.log("child ngAfterViewChecked");   
+  ngAfterViewChecked() {
+    console.log("child ngAfterViewChecked");
   }
 
-  ngOnDestroy(){
-    console.log("child ngOnDestroy");   
+  ngOnDestroy() {
+    console.log("child ngOnDestroy");
   }
-
 }
 
-
-export class Customer{
+export class Customer {
   code: number;
   name: string;
 }

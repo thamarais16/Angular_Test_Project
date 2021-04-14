@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
-import{ Customer } from './child/child.component';
+import{ Customer } from '../child/child.component';
 
 @Component({
   selector: 'app-parent',
@@ -13,7 +13,6 @@ export class ParentComponent {
   hideChild: boolean = false;
 
   constructor(
-    private cus: Customer
   ){
     console.log("Parent constructor");   
   }
