@@ -3,14 +3,14 @@
     <h2>Parent Component</h2>
   </div>
   <div class="card-body"> 
-    <input type="text"  [childText]="name" (emitedChildValue)="changeName($event)" app-child />
-    your name is: {{name}}
+   <input type="text" [(ngModel)]="message" />
+   <br>
+   <input type="text" [(ngModel)]="content" />
+   <br>
+   <label>show hide child
+   <input type="checkbox" [(ngModel)]="hideChild" />
+   </label>
   </div>
-
-  <!-- <div class="card-header">
-    <h2>Child Component</h2>
-  </div>
-  <div class="card-body">
-    
-  </div> -->
+  <app-child [message]="message">{{content}}</app-child>
+   
 </div> 

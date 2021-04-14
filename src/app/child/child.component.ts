@@ -1,26 +1,60 @@
-import { Component, OnInit, Input, OnChanges, SimpleChange, SimpleChanges, Output, EventEmitter} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, Input, OnChanges, SimpleChange, SimpleChanges, Output, EventEmitter, ElementRef} from '@angular/core';
 
 @Component({
-  selector: '[app-child]',
+  selector: 'app-child',
   templateUrl: './child.component.html', 
   styleUrls: ['./child.component.css'],
   //inputs: ['count']
+  changeDetection: ChangeDetectionStrategy.Default
 })
-export class ChildComponent implements OnChanges {
-  @Input() childText: any;
-  @Output() emitedChildValue: EventEmitter<any> = new EventEmitter();
+export class ChildComponent {
   
-  constructor() { }
+  @Input() message: string;
+  customer: Customer = new Customer();
 
-  ngOnChanges(changes: SimpleChanges): void{
-    console.log(changes);
-    for(let key in changes){
-      if(key == "childText"){
-        alert("boboy0");
-        this.emitedChildValue.emit(changes['childText'].currentValue);
-      }
-    }
+  constructor( 
+    private elem: ElementRef
+  ){
+    console.log("child constructor");   
+  }
+
+  ngOnInit(){
+    console.log("child ngOnInit");   
+  }
+
+  ngOnChanges(){
+    console.log("child ngOnChanges");   
   }
 
 
+  ngDoCheck(){
+    console.log("child ngDoCheck");    
+  }
+
+  ngAfterContentInit(){
+    console.log("child ngAfterContentInit");    
+  }
+
+  ngAfterContentChecked(){
+    console.log("child ngAfterContentChecked");   
+  }
+
+  ngAfterViewInit(){
+    console.log("child ngAfterViewInit");   
+  }
+
+  ngAfterViewChecked(){
+    console.log("child ngAfterViewChecked");   
+  }
+
+  ngOnDestroy(){
+    console.log("child ngOnDestroy");   
+  }
+
+}
+
+
+export class Customer{
+  code: number;
+  name: string;
 }

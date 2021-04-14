@@ -39,7 +39,7 @@ import { ScIfDirective } from './sc-if.directive';
     InterpolationComponent,
     ScIfDirective
   ],
-  bootstrap:    [ OfficialComponent ],
+  bootstrap:    [ ParentComponent ],
   providers: [
     DatePipe,
     CurrencyPipe,
