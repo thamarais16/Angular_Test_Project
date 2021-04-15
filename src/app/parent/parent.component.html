@@ -1,3 +1,22 @@
-<p>
-parent works! 
-</p>
+<div class="card">
+  <div  class="card-header">
+    <h3>Parent Component</h3>
+  </div>
+
+  <div style="display: block;">
+    <div class="card-body">
+      <select [(ngModel)]= "parentMessage">
+        <option value="Thamarai">Thamarai</option>
+        <option value="Thiru">Thiru</option>
+        <option value="Paru">Paru</option>
+      </select>
+
+      <textarea type="text" [(ngModel)]="contentProjection"></textarea>
+      <button on-click="toggle()">Show/Hide</button>
+      <app-child *ngIf="displayChild" [message]="parentMessage" >
+        {{contentProjection}}
+      </app-child>
+    </div>
+  </div>
+
+</div>
