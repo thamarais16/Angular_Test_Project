@@ -1,65 +1,15 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  OnInit,
-  Input,
-  OnChanges,
-  SimpleChange,
-  SimpleChanges,
-  Output,
-  EventEmitter,
-  ElementRef
-} from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: "app-child",
-  templateUrl: "./child.component.html",
-  styleUrls: ["./child.component.css"],
-  //inputs: ['count']
-  changeDetection: ChangeDetectionStrategy.Default
+  selector: 'app-child',
+  templateUrl: './child.component.html',
+  styleUrls: ['./child.component.css']
 })
-export class ChildComponent {
-  @Input() message: string;
-  customer: Customer = new Customer();
+export class ChildComponent implements OnInit {
 
-  constructor(private elem: ElementRef) {
-    console.log("child constructor");
-  }
+  constructor() { }
 
   ngOnInit() {
-    console.log("child ngOnInit");
   }
 
-  ngOnChanges() {
-    console.log("child ngOnChanges");
-  }
-
-  ngDoCheck() {
-    console.log("child ngDoCheck");
-  }
-
-  ngAfterContentInit() {
-    console.log("child ngAfterContentInit");
-  }
-
-  ngAfterContentChecked() {
-    console.log("child ngAfterContentChecked");
-  }
-
-  ngAfterViewInit() {
-    console.log("child ngAfterViewInit");
-  }
-
-  ngAfterViewChecked() {
-    console.log("child ngAfterViewChecked");
-  }
-
-  ngOnDestroy() {
-    console.log("child ngOnDestroy");
-  }
-}
-
-export class Customer {
-  code: number;
-  name: string;
 }
