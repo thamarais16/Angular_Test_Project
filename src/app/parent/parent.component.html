@@ -1,9 +1,9 @@
 <div class="card">
   <div  class="card-header">
     <h3>Parent Component</h3>
-  </div>
+  </div> 
 
-  <div style="display: block;">
+  <div style="display: none;">
     <div class="card-body">
       <select [(ngModel)]= "parentMessage">
         <option value="Thamarai">Thamarai</option>
@@ -16,6 +16,17 @@
       <app-child *ngIf="displayChild" [message]="parentMessage" >
         {{contentProjection}}
       </app-child>
+    </div>
+  </div>
+
+  <div style="display: block;">
+    <div class="card-body">
+      <p>message: <input type="text" [(ngModel)]="message" /></p>
+      <p>code: <input type="text" [(ngModel)]="code" /></p>
+      <p>Nmae: <input type="text" [(ngModel)]="name" /></p><br>
+      <button (click)="updateCustomer()">UpdateCustomer</button>
+
+      <app-child [message]="message" [customer]="customer"></app-child>
     </div>
   </div>
 

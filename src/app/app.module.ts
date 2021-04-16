@@ -25,7 +25,6 @@ import { TempConverterPipe } from "./temp-converter.pipe";
 import { DirectivesComponent } from "./directives/directives.component";
 import { InterpolationComponent } from "./interpolation/interpolation.component";
 import { ScIfDirective } from "./sc-if.directive";
-import { GrandChildComponent } from "./grandchild/grand-child.component";
 
 @NgModule({
   imports: [CommonModule, BrowserModule, FormsModule],
@@ -42,8 +41,7 @@ import { GrandChildComponent } from "./grandchild/grand-child.component";
     TempConverterPipe,
     DirectivesComponent,
     InterpolationComponent,
-    ScIfDirective,
-    GrandChildComponent
+    ScIfDirective
   ],
   bootstrap: [ParentComponent],
   providers: [

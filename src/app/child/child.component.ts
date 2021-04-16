@@ -1,23 +1,24 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
+// import { Customer } from '../child/child.component';
+
 
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.css'],
-  changeDetection: ChangeDetectionStrategy.Default,
+  //changeDetection: ChangeDetectionStrategy.Default,
 })
-export class ChildComponent implements OnInit {
-  _message;
+export class ChildComponent implements OnInit, OnChanges {
+  @Input() message: string;
+  @Input() customer: Customer;
+  changeLog: [...string[]] = [];
   constructor() { 
     console.log("child constructor");
   }
 
-  customer: Customer = new Customer();
+  //customer: Customer = new Customer();
 
-  @Input()
-  set message(value: string){
-    this._message = value;
-  }
+
   ngOnInit() {
     console.log("child init");
   }
@@ -26,29 +27,38 @@ export class ChildComponent implements OnInit {
     console.log("child destroy");
   }
 
-  ngOnChanges(){
+  ngOnChanges(changes: SimpleChanges){
     console.log("child ngOnChanges");
+    for(let prop in changes){
+      const to = JSON.stringify(changes[prop].currentValue);
+      const from = JSON.stringify(changes[prop].previousValue);
+      const CHANGElOG = `${prop}: changed from ${from} to ${to}`;
+      this.changeLog.push(CHANGElOG);
+
+    }
   }
 
-  ngDoCheck(){
-    console.log("child ngDoCheck");
-  }
+  // ngDoCheck(){
+  //   console.log("child ngDoCheck");
+  // }
 
-  ngAfterContentInit(){
-    console.log("child ngAfterContentInit");
-  }
+  // ngAfterContentInit(){
+  //   console.log("child ngAfterContentInit");
+  // }
 
-  ngAfterContentChecked(){
-    console.log("child ngAfterContentChecked");
-  }
+  // ngAfterContentChecked(){
+  //   console.log("child ngAfterContentChecked");
+  // }
 
-  ngAfterViewInit(){
-    console.log("child ngAfterViewInit");
-  }
+  // ngAfterViewInit(){
+  //   console.log("child ngAfterViewInit");
+  // }
 
-  ngAfterViewChecked(){
-    console.log("child ngAfterViewChecked");
-  }
+  // ngAfterViewChecked(){ 
+  //   console.log("child ngAfterViewChecked");
+  // }
+
+
 
 }
 
