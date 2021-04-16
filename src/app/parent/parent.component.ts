@@ -56,6 +56,7 @@ export class ParentComponent implements OnInit {
   }
 
   updateCustomer(){
+     this.customer= new Customer();    //Add this
     this.customer.name = this.name;
     this.customer.code = this.code;
   }
