@@ -1,6 +1,6 @@
 <div class="card">
   <div  class="card-header">
-    <h3>Parent Component</h3>
+    <h3>Parent Component</h3> 
   </div> 
 
   <div style="display: none;">
@@ -21,12 +21,12 @@
 
   <div style="display: block;">
     <div class="card-body">
-      <p>message: <input type="text" [(ngModel)]="message" /></p>
-      <p>code: <input type="text" [(ngModel)]="code" /></p>
-      <p>Nmae: <input type="text" [(ngModel)]="name" /></p><br>
-      <button (click)="updateCustomer()">UpdateCustomer</button>
+      <p>Message from parent component: <input type="text" [(ngModel)]="message" /></p>
+      <p>customer name from parent component: <input type="text" [(ngModel)]="name" /></p>
+      <p>customer code from parent component: <input type="text" [(ngModel)]="code" /></p>
+      <button type="button" on-click="updateCustomer()"></button>
 
-      <app-child [message]="message" [customer]="customer"></app-child>
+      <app-child>projected Content</app-child>
     </div>
   </div>
 

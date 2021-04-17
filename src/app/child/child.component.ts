@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
-// import { Customer } from '../child/child.component';
+import { Customer } from "./customer"
 
 
 @Component({
@@ -9,9 +9,11 @@ import { Component, OnInit, ChangeDetectionStrategy, Input, OnChanges, SimpleCha
   //changeDetection: ChangeDetectionStrategy.Default,
 })
 export class ChildComponent implements OnInit, OnChanges {
+  
   @Input() message: string;
-  @Input() customer: Customer;
+  @Input() customer: Customer = new Customer();
   changeLog: [...string[]] = [];
+  
   constructor() { 
     console.log("child constructor");
   }
@@ -28,15 +30,9 @@ export class ChildComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges){
-    console.log("child ngOnChanges");
-    for(let prop in changes){
-      const to = JSON.stringify(changes[prop].currentValue);
-      const from = JSON.stringify(changes[prop].previousValue);
-      const CHANGElOG = `${prop}: changed from ${from} to ${to}`;
-      this.changeLog.push(CHANGElOG);
-
-    }
+    console.log(changes);
   }
+  
 
   // ngDoCheck(){
   //   console.log("child ngDoCheck");
@@ -60,10 +56,4 @@ export class ChildComponent implements OnInit, OnChanges {
 
 
 
-}
-
-
-export class Customer{
-  name: string;
-  code: number;
 }

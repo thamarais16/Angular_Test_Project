@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { Customer } from '../child/child.component';
+import { Customer } from "./customer"
 
 @Component({ 
   selector: 'app-parent', 
@@ -11,10 +11,12 @@ export class ParentComponent implements OnInit {
   displayChild: boolean = true;
   parentMessage: string = "";
   contentProjection: string = "Hi child . I am parent content projection.";
+  
   message: string = "";
   customer: Customer = new Customer();
   name: string ="";
   code: number = 0;
+ 
   constructor() { 
     console.log("parent constructor");
   }
@@ -56,7 +58,6 @@ export class ParentComponent implements OnInit {
   }
 
   updateCustomer(){
-     this.customer= new Customer();    //Add this
     this.customer.name = this.name;
     this.customer.code = this.code;
   }

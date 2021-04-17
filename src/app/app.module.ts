@@ -20,11 +20,12 @@ import {
   PercentPipe
 } from "@angular/common";
 import { ParentComponent } from "./parent/parent.component";
-import { ChildComponent, Customer } from "./child/child.component";
+import { ChildComponent } from "./child/child.component";
 import { TempConverterPipe } from "./temp-converter.pipe";
 import { DirectivesComponent } from "./directives/directives.component";
 import { InterpolationComponent } from "./interpolation/interpolation.component";
 import { ScIfDirective } from "./sc-if.directive";
+import { Customer } from "./customer"
 
 @NgModule({
   imports: [CommonModule, BrowserModule, FormsModule],
