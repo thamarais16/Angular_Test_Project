@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
-import { Customer } from "./customer"
+import { Customer } from "./customer";
 
 
 @Component({

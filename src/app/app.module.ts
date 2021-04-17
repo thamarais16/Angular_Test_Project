@@ -52,7 +52,8 @@ import { Customer } from "./customer"
     UpperCasePipe,
     LowerCasePipe,
     TitleCasePipe,
-    PercentPipe
+    PercentPipe,
+    Customer
   ]
 })
 export class AppModule {}
