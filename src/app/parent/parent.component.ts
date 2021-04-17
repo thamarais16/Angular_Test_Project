@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { Customer } from "./customer";
+import { Customer } from "../customer";
 
 @Component({ 
   selector: 'app-parent', 
