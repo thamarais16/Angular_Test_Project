@@ -25,33 +25,33 @@ export class ParentComponent implements OnInit {
     console.log("parent init");
   }
 
-  ngOnDestroy(){
-    console.log("parent destroy");
-  }
+  // ngOnDestroy(){
+  //   console.log("parent destroy");
+  // }
    
-  ngOnChanges(){
-    console.log("parent ngOnChanges");
-  }
+  // ngOnChanges(){
+  //   console.log("parent ngOnChanges");
+  // }
 
-  ngDoCheck(){
-    console.log("parent ngDoCheck");
-  }
+  // ngDoCheck(){
+  //   console.log("parent ngDoCheck");
+  // }
 
-  ngAfterContentInit(){
-    console.log("parent ngAfterContentInit");
-  }
+  // ngAfterContentInit(){
+  //   console.log("parent ngAfterContentInit");
+  // }
 
-  ngAfterContentChecked(){
-    console.log("parent ngAfterContentChecked");
-  }
+  // ngAfterContentChecked(){
+  //   console.log("parent ngAfterContentChecked");
+  // }
 
-  ngAfterViewInit(){
-    console.log("parent ngAfterViewInit");
-  }
+  // ngAfterViewInit(){
+  //   console.log("parent ngAfterViewInit");
+  // }
 
-  ngAfterViewChecked(){
-    console.log("parent ngAfterViewChecked");
-  }
+  // ngAfterViewChecked(){
+  //   console.log("parent ngAfterViewChecked");
+  // }
 
   toggle(): void{
     this.displayChild = !this.displayChild;

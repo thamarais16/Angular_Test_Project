@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, OnChanges, SimpleChange, SimpleChanges, DoCheck } from '@angular/core';
 import { Customer } from "../customer";
 
 @Component({
@@ -7,12 +7,12 @@ import { Customer } from "../customer";
   styleUrls: ['./child.component.css'],
   //changeDetection: ChangeDetectionStrategy.Default,
 })
-export class ChildComponent implements OnInit, OnChanges {
+export class ChildComponent implements OnInit, OnChanges, DoCheck {
   
   @Input() message: string;
-  @Input() customer: Customer = new Customer();
+  @Input() customer = {} as Customer;
   changeLog: [...string[]] = [];
-  
+  oldCustomer = {} as Customer;
   constructor() { 
     console.log("child constructor");
   }
@@ -21,15 +21,34 @@ export class ChildComponent implements OnInit, OnChanges {
 
 
   ngOnInit() {
-    console.log("child init");
+    //console.log("child init");
   }
 
   ngOnDestroy(){
-    console.log("child destroy");
+    //console.log("child destroy");
   }
 
+  ngDoCheck(){
+    if(this.oldCustomer.name != this.customer.name || this.oldCustomer.code != this.customer.code){
+      const to = JSON.stringify(this.customer);
+      const from = JSON.stringify(this.oldCustomer);
+      const changes = `do check customer from ${from} to ${to}`;
+      this.changeLog.push(changes);
+      this.oldCustomer = {...this.customer};
+    }
+    
+  }
+  
+
   ngOnChanges(changes: SimpleChanges){
-    console.log(changes);
+    for(let key in changes){
+      const changee = key;
+      const from = JSON.stringify(changes[key].previousValue);
+      const to = JSON.stringify(changes[key].currentValue);
+      const changeLog = `${changee} is changed from ${from} to ${to}`;
+      this.changeLog.push(changeLog);
+    }
+    
   }
   
 

@@ -26,7 +26,7 @@
       <p>customer code from parent component: <input type="text" [(ngModel)]="code" /></p>
       <button type="button" on-click="updateCustomer()">Update</button>
 
-      <app-child>projected Content</app-child>
+      <app-child [message]="message" [customer]="customer">projected Content</app-child>
     </div>
   </div>
 
