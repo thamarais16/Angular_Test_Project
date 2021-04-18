@@ -37,7 +37,7 @@
     </div>
   </div> 
 
-  <div style="display: block;">
+  <div style="display: none;">
     <div class="card-body">
      <ng-container *ngIf="(obsValue | async); else elB">
        <p>{{obsValue | async }}</p>
@@ -58,6 +58,41 @@
 
       <p>{{'343633' | lowercase | number:'1.2-2'}}</p>
      
+    </div>
+  </div> 
+
+  <div style="display: none;">
+    <div class="card-body">
+     <p>{{'Thamrai selvam' | uppercase}}</p>
+     <p>{{'Thamrai selvam' | lowercase}}</p>
+     <p>{{'Thamrai selvam' | titlecase}}</p>
+     <p>{{'Thamrai selvam' | slice:0:7}}</p>
+     <ul>
+       <li *ngFor="let lice of newSlice | slice:0:3">
+        number is: {{lice | number:'2.2-2'}}
+        percent is: {{lice | percent}}
+       </li>
+     </ul>
+     <p>{{'20300' | currency:'INR':true}}</p>
+
+     <p>{{date | date:'EEEE, MMMM, dd, yyyy, hh:mm:ss:SSS aaaa zzzz'}}</p>
+     <p>{{date | date:'EE, MMM, d, y, h:m:s:SS aaaaa z'}}</p>
+     <p>short date: {{date | date:'M/d/y h:mm a'}}</p>
+     <p>medium date:  {{date | date:'MMM, d, y, h:mm:ss a'}}</p>
+     <p>long date: {{date | date:'MMMM, d, y, h:mm:ss a z'}}</p>
+     <p>full date: {{date | date:'EEEE, MMMM, d, y h:mm:ss a zzzz}}</p>
+     <p>{{date | date:'short':'IST'}}
+    </div>
+  </div> 
+
+  <div style="display: block;">
+    <div class="card-body">
+     <ng-container *ngIf="(asy | async) as bob; else ely">
+       <p>{{bob | async}}</p>
+     </ng-container>
+     <ng-template #ely>
+       Loading Please Wait...
+     </ng-template>
     </div>
   </div> 
 

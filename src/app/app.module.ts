@@ -44,7 +44,7 @@ import { Customer } from "./customer"
     InterpolationComponent,
     ScIfDirective
   ],
-  bootstrap: [ParentComponent],
+  bootstrap: [PipeComponent],
   providers: [
     DatePipe,
     CurrencyPipe,

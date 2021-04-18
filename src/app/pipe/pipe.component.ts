@@ -33,8 +33,9 @@ export class PipeComponent implements OnInit {
       ['c', 3]
     ])
     
+    public newSlice: [...number[]] = [0, 1, 2, 3, 4, 5];
 
-
+    public date: Date =new Date();
   constructor(
     private _date: DatePipe,
     private _currency: CurrencyPipe,
@@ -65,6 +66,12 @@ export class PipeComponent implements OnInit {
     setTimeout(()=>{
       obs.next({"message":["afghan","basset","blood","english","ibizan","plott","walker"],"status":"success"});
     },10000);
+  }).pipe(shareReplay());
+
+  asy: Observable<any> = new Observable((obs)=>{
+    setTimeout(()=>{
+      obs.next("Hi am new observable");
+    },9000);
   }).pipe(shareReplay());
 
 }
