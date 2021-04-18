@@ -74,4 +74,21 @@ export class PipeComponent implements OnInit {
     },9000);
   }).pipe(shareReplay());
 
+  asyFor: Observable<any> = new Observable((obs)=>{
+    setTimeout(()=>{
+      obs.next({"message":["afghan","basset","blood","english","ibizan","plott","walker"],"status":"success"});
+      console.log(obs);
+    },9000);
+  }).pipe(shareReplay());
+
+  keyvals: Observable<any> = new Observable((obs)=> {
+    setTimeout(()=>{
+      obs.next({"c": 55,"a": 25,"b": 40});
+    },10 * 1000);
+  }).pipe(shareReplay());
+
+  compres(a: KeyValue<number, string>, b: KeyValue<number, string>): number{
+    return 0;
+  }
+
 }

@@ -26,6 +26,7 @@ import { DirectivesComponent } from "./directives/directives.component";
 import { InterpolationComponent } from "./interpolation/interpolation.component";
 import { ScIfDirective } from "./sc-if.directive";
 import { Customer } from "./customer"
+import { DateFormatPipe } from "./date-format.pipe";
 
 @NgModule({
   imports: [CommonModule, BrowserModule, FormsModule],
@@ -42,7 +43,8 @@ import { Customer } from "./customer"
     TempConverterPipe,
     DirectivesComponent,
     InterpolationComponent,
-    ScIfDirective
+    ScIfDirective,
+    DateFormatPipe
   ],
   bootstrap: [PipeComponent],
   providers: [
