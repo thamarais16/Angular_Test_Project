@@ -27,6 +27,8 @@ import { InterpolationComponent } from "./interpolation/interpolation.component"
 import { ScIfDirective } from "./sc-if.directive";
 import { Customer } from "./customer"
 import { DateFormatPipe } from "./date-format.pipe";
+import { ChildCommuComponent } from "./child-commu/child-commu.component";
+import { ParentCommuComponent } from "./parent-commu/parent-commu.component";
 
 @NgModule({
   imports: [CommonModule, BrowserModule, FormsModule],
@@ -44,9 +46,11 @@ import { DateFormatPipe } from "./date-format.pipe";
     DirectivesComponent,
     InterpolationComponent,
     ScIfDirective,
-    DateFormatPipe
+    DateFormatPipe,
+    ChildCommuComponent,
+    ParentCommuComponent
   ],
-  bootstrap: [PipeComponent],
+  bootstrap: [ParentCommuComponent],
   providers: [
     DatePipe,
     CurrencyPipe,
