@@ -8,15 +8,26 @@ import { Customer } from '../customer';
 })
 export class ChildCommuComponent implements OnInit, DoCheck, OnChanges { 
   @Input() message: string;
-  @Input() customer = {} as Customer; 
+  @Input() customer: Customer; 
   changeLog: [...string[]] =[];
-
-  constructor() { }
+  differ: any;
+  constructor(
+    private differs: KeyValueDiffers,
+  ) { }
 
   ngOnInit() { 
+    this.differ = this.differs.find(this.customer).create();
   }
 
   ngDoCheck(){
+    const customChanges = this.differ.diff(this.customer);
+    if(customChanges)[
+      customChanges.forEachChangedItem(r => {
+      
+      this.changeLog.push(r.key +' '+ JSON.stringify(r.value))
+      })
+    ]
+     
   }
 
   ngOnChanges(changes: SimpleChanges){
