@@ -8,7 +8,7 @@ import { Customer } from '../customer';
 })
 export class ChildCommuComponent implements OnInit, DoCheck, OnChanges { 
   @Input() message: string;
-  @Input() customer = {} as Customer; 
+  @Input() customer :Customer; 
   changeLog: string[] =[];
   differ: any;
   constructor(
