@@ -8,8 +8,8 @@ import { Customer } from '../customer';
 })
 export class ChildCommuComponent implements OnInit, DoCheck, OnChanges { 
   @Input() message: string;
-  @Input() customer: Customer; 
-  changeLog: [...string[]] =[];
+  @Input() customer: Customer = new Customer(); 
+  changeLog: string[] =[];
   differ: any;
   constructor(
     private differs: KeyValueDiffers,
@@ -21,12 +21,12 @@ export class ChildCommuComponent implements OnInit, DoCheck, OnChanges {
 
   ngDoCheck(){
     const customChanges = this.differ.diff(this.customer);
-    if(customChanges)[
+    if(customChanges){
       customChanges.forEachChangedItem(r => {
       
       this.changeLog.push(r.key +' '+ JSON.stringify(r.value))
       })
-    ]
+    }
      
   }
 
