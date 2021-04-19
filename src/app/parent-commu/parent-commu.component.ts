@@ -11,5 +11,5 @@ export class ParentCommuComponent implements OnInit {
 
   ngOnInit() {
   }
-
+ 
 }
