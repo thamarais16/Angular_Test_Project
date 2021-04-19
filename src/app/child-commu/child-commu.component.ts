@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, DoCheck, KeyValueDiffers, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, Output, DoCheck, KeyValueDiffers, OnChanges, SimpleChange, SimpleChanges, IterableDiffers } from '@angular/core';
 import { Customer } from '../customer';
 
 @Component({
@@ -20,14 +20,14 @@ export class ChildCommuComponent implements OnInit, DoCheck, OnChanges {
   }
 
   ngDoCheck(){
-    const customChanges = this.differ.diff(this.customer);
+    const customChanges = this.differ.diff(this.customer).create(null);
     
-    if(customChanges){
+    
       customChanges.forEachChangedItem(r => {
       console.log(r);
       this.changeLog.push(r.key +' '+ JSON.stringify(r.previousValue) +' '+JSON.stringify(r.currentValue));
       })
-    }
+    
      
   }
 
