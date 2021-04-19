@@ -20,7 +20,7 @@ import {
   PercentPipe
 } from "@angular/common";
 import { ParentComponent } from "./parent/parent.component";
-import { ChildComponent } from "./child/child.component";
+import { ChildComponent } from "./child/child.component"; 
 import { TempConverterPipe } from "./temp-converter.pipe";
 import { DirectivesComponent } from "./directives/directives.component";
 import { InterpolationComponent } from "./interpolation/interpolation.component";
