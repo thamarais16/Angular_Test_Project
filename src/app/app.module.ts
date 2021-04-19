@@ -29,6 +29,7 @@ import { Customer } from "./customer"
 import { DateFormatPipe } from "./date-format.pipe";
 import { ChildCommuComponent } from "./child-commu/child-commu.component";
 import { ParentCommuComponent } from "./parent-commu/parent-commu.component";
+import {ServiceComponent } from './service/service.component'
 
 @NgModule({
   imports: [CommonModule, BrowserModule, FormsModule],
@@ -48,7 +49,8 @@ import { ParentCommuComponent } from "./parent-commu/parent-commu.component";
     ScIfDirective,
     DateFormatPipe,
     ChildCommuComponent,
-    ParentCommuComponent
+    ParentCommuComponent,
+    ServiceComponent
   ],
   bootstrap: [ParentCommuComponent],
   providers: [
