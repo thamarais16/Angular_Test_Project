@@ -8,7 +8,13 @@
       <ng-content></ng-content>
       <p>Message is {{message}}</p>
       <p>code is: {{customer.code}}</p>
-      <p>name is: {{customer.name}]</p>
+      <p>name is: {{customer.name}}</p>
+      
+      <ul>
+        <li *ngFor="let log of changeLog">
+          {{log}}
+        </li>
+      </ul>
     </div>
   </div>
 
