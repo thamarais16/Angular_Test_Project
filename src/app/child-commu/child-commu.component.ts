@@ -8,7 +8,7 @@ import { Customer } from '../customer';
 })
 export class ChildCommuComponent implements OnInit, DoCheck, OnChanges { 
   @Input() message: string;
-  @Input() customer: Customer = new Customer(); 
+  @Input() customer = {} as Customer; 
   changeLog: string[] =[];
   differ: any;
   constructor(
@@ -21,7 +21,9 @@ export class ChildCommuComponent implements OnInit, DoCheck, OnChanges {
 
   ngDoCheck(){
     const customChanges = this.differ.diff(this.customer);
+    
     if(customChanges){
+      alert("do");
       customChanges.forEachChangedItem(r => {
       
       this.changeLog.push(r.key +' '+ JSON.stringify(r.value))
