@@ -1,0 +1,43 @@
+<div class="card">
+  <div  class="card-header">
+    <h3>Service Component</h3> 
+  </div> 
+
+  <div style="display: block;">
+    <div class="card-body">
+      <div class="container">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>
+                  Id
+                </th>
+                 <th>
+                  Name
+                </th>
+                 <th>
+                  Price
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let product of products">
+                <td>
+                  {{product.productId}}
+                </td>
+                <td>
+                  {{product.name}}
+                </td>
+                <td>
+                  {{product.price}}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
