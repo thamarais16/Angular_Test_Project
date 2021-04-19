@@ -23,10 +23,9 @@ export class ChildCommuComponent implements OnInit, DoCheck, OnChanges {
     const customChanges = this.differ.diff(this.customer);
     
     if(customChanges){
-      alert("do");
       customChanges.forEachChangedItem(r => {
-      
-      this.changeLog.push(r.key +' '+ JSON.stringify(r.value))
+      console.log(r);
+      this.changeLog.push(r.key +' '+ JSON.stringify(r.previousValue) +' '+JSON.stringify(r.currentValue));
       })
     }
      
