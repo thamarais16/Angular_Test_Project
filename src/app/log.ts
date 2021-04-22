@@ -1,5 +1,10 @@
-export class Logger{
-  public static log(message: any): any{
-    console.log(message);
+export class loggerService{
+  public log(message: any, msg?: any): any{
+    if(msg){
+      console.log(message, msg);
+    }else{
+      console.log(message);
+    }
+    
   }
 }

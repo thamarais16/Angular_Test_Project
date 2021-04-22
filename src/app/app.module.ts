@@ -30,6 +30,8 @@ import { DateFormatPipe } from "./date-format.pipe";
 import { ChildCommuComponent } from "./child-commu/child-commu.component";
 import { ParentCommuComponent } from "./parent-commu/parent-commu.component";
 import { ServiceComponent } from './service/service.component'
+import { ProductService } from "./product-service";
+import { loggerService } from "./log";
 
 @NgModule({
   imports: [CommonModule, BrowserModule, FormsModule],
@@ -61,7 +63,9 @@ import { ServiceComponent } from './service/service.component'
     LowerCasePipe,
     TitleCasePipe,
     PercentPipe,
-    Customer
+    Customer,
+   // ProductService,
+    //loggerService,
   ]
 })
 export class AppModule {}

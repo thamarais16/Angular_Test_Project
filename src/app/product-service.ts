@@ -1,7 +1,15 @@
+import { Injectable } from "@angular/core";
+import { loggerService } from "./log";
 import { Product } from './product'
 
+@Injectable()
 export class ProductService {
-  public getProducts(){
+  constructor(
+    private logger: loggerService
+  ){
+
+  }
+  public getProducts(){ 
     let products: Product[];
 
     products = [
@@ -9,6 +17,8 @@ export class ProductService {
       new Product(2, 'pendric', 1000),
       new Product(3, 'power', 343)
     ]
+
+    this.logger.log('oh ', products);
 
     return products;
   }
