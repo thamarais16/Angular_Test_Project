@@ -1,4 +1,4 @@
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, OnInit, Injectable, Inject } from '@angular/core';
 import { Product } from "../product";
 import { ProductService } from "../product-service";
 import { loggerService } from "../log";
@@ -14,8 +14,8 @@ export class ServiceComponent implements OnInit {
   products: Product[];
 
   constructor(
-    private productService: ProductService,
-    private logger: loggerService,
+    @Inject(ProductService) private productService,
+    @Inject(loggerService) private logger,
   ) { }
 
   ngOnInit() {

@@ -1,11 +1,11 @@
-import { Injectable } from "@angular/core";
+import { Injectable, Inject } from "@angular/core";
 import { loggerService } from "./log";
 import { Product } from './product'
 
 @Injectable()
 export class ProductService {
   constructor(
-    private logger: loggerService
+   @Inject(loggerService) private logger,
   ){
 
   }

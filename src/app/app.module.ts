@@ -32,6 +32,7 @@ import { ParentCommuComponent } from "./parent-commu/parent-commu.component";
 import { ServiceComponent } from './service/service.component'
 import { ProductService } from "./product-service";
 import { loggerService } from "./log";
+import { ProSer } from "./pro-ser";
 
 @NgModule({
   imports: [CommonModule, BrowserModule, FormsModule],
