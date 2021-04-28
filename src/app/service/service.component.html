@@ -1,4 +1,4 @@
-<div class="card">
+<!-- <div class="card">
   <div  class="card-header">
     <h3>Service Component</h3> 
   </div> 
@@ -7,7 +7,7 @@
     <div class="card-body">
       <div class="container">
         <div class="table-responsive">
-          <table class="table" border="1"> 
+          <table class="table" border="1">  
             <thead>
               <tr>
                 <th>
@@ -38,6 +38,33 @@
         </div>
       </div>
     </div>
+  </div>
+
+</div> -->
+
+<div class="card">
+  <div class="card-header">
+    Reactive Forms
+  </div>
+  <div class="card-body">
+    <form [formGroup]="form" #formDirective="ngForm" (submit)="formSubmit()">
+      <div>
+        <input formControlName="name" type="text">
+        <p style="color:red" *ngIf="form.get('name').hasError('required')">Not valid</p>
+      </div>
+
+      <div>
+        <input formControlName="email" type="text" >
+        <p  style="color:red" *ngIf="form.get('email').hasError('email')">email require</p>
+      </div>
+      
+      <div>
+        <input formControlName="id" type="text" >
+        <p  style="color:red" *ngIf="form.get('id').hasError('required')">id require</p>
+      </div>
+        <button type="submit">submit</button>
+        <button type="reset" (click)="rest(formDirective)">reset</button>
+    </form>
   </div>
 
 </div>

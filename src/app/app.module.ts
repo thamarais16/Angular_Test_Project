@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { BrowserModule } from "@angular/platform-browser";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { AppComponent } from "./app.component";
 import { HelloComponent } from "./hello.component";
@@ -35,7 +35,7 @@ import { loggerService } from "./log";
 import { ProSer } from "./pro-ser";
 
 @NgModule({
-  imports: [CommonModule, BrowserModule, FormsModule],
+  imports: [CommonModule, BrowserModule, FormsModule, ReactiveFormsModule],
   declarations: [
     AppComponent,
     HelloComponent,
