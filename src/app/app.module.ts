@@ -33,6 +33,7 @@ import { ServiceComponent } from './service/service.component'
 import { ProductService } from "./product-service";
 import { loggerService } from "./log";
 import { ProSer } from "./pro-ser";
+import { ReactiveFormComponent } from "./reactive-form/reactive-form.component";
 
 @NgModule({
   imports: [CommonModule, BrowserModule, FormsModule, ReactiveFormsModule],
@@ -53,9 +54,10 @@ import { ProSer } from "./pro-ser";
     DateFormatPipe,
     ChildCommuComponent,
     ParentCommuComponent,
-    ServiceComponent
+    ServiceComponent,
+    ReactiveFormComponent
   ],
-  bootstrap: [ServiceComponent],
+  bootstrap: [ReactiveFormComponent],
   providers: [
     DatePipe,
     CurrencyPipe,
