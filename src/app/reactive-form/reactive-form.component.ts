@@ -1,5 +1,5 @@
 import { Component, OnInit, Optional, Self, InjectionToken, Inject} from '@angular/core';
-import { FormBuilder, FormGroup, FormControl, Validators } from "@angular/forms";
+import { FormBuilder, FormGroup, FormControl, Validators, AbstractControl, ValidatorFn } from "@angular/forms";
 import { UserDetailService } from "../user-detail.service";
 import { Userdetail } from '../userdetail';
 export const userDetail = new InjectionToken<string>('');
@@ -47,17 +47,18 @@ export class ReactiveFormComponent implements OnInit {
 
   initializeForm(){
     this.form = this.formBuild.group({
-      name: new FormControl('',[Validators.required, this.nameMinimumLength.bind(this)],[]),
-      password: new FormControl('',[Validators.required],[]),
-      accept: new FormControl('',[Validators.required],[])
+      name: new FormControl(null,[Validators.required, this.nameMinimumLength]),
+      password: new FormControl(null,[Validators.required],[]),
+      accept: new FormControl(null,[Validators.required],[])
     })
 
     this.form.patchValue(this.userDetails);
   }
 
-  nameMinimumLength(value: string){
+  nameMinimumLength(control: AbstractControl) {
+    let value = control as unknown as string;
     if(value.trim().length <3){
-      return {lengthMatch: true}
+      return { isNotMatch: true }
     }else{
       return null
     }
