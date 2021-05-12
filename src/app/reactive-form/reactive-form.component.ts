@@ -2,12 +2,17 @@ import { Component, OnInit, Optional, Self } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from "@angular/forms";
 import { UserDetailService } from "../user-detail.service";
 import { Userdetail } from '../userdetail';
+import { userDetail } from './classes/token';
 
 @Component({
   selector: 'app-reactive-form',
   templateUrl: './reactive-form.component.html',
-  styleUrls: ['./reactive-form.component.css'],
+  styleUrls: ['./reactive-form.component.css'], 
   providers: [
+    // {
+    //   provide: UserDetailService,
+    //   useClass: UserDetailService
+    // }
     {
       provide: UserDetailService,
       useClass: UserDetailService

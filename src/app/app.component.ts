@@ -40,17 +40,17 @@ export class AppComponent  {
   display(): string{
     return "Hi";
   }
-  bumba: string= "bumba";
+  bumba: string= "";
 
    promise = new Promise((resolve, reject): any =>{
-     let a = "ruba";
+     let a = "";
 
      switch(a){
-       case "ruba":
-        resolve("machi");
+       case "":
+        resolve("");
         break;
        default:
-        reject("urrrr");
+        reject("");
      }
    });
 

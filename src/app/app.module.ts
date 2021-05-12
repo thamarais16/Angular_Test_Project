@@ -34,6 +34,7 @@ import { ProductService } from "./product-service";
 import { loggerService } from "./log";
 import { ProSer } from "./pro-ser";
 import { ReactiveFormComponent } from "./reactive-form/reactive-form.component";
+import { userDetail } from './classes/token';
 
 @NgModule({
   imports: [CommonModule, BrowserModule, FormsModule, ReactiveFormsModule],
