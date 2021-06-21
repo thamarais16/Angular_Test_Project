@@ -34,6 +34,8 @@ import { ProductService } from "./product-service";
 import { loggerService } from "./log";
 import { ProSer } from "./pro-ser";
 import { ReactiveFormComponent } from "./reactive-form/reactive-form.component";
+import { CldComponent } from "./cld/cld.component" ;
+import { PrtComponent } from "./prt/prt.component" ;
 
 @NgModule({
   imports: [CommonModule, BrowserModule, FormsModule, ReactiveFormsModule],
@@ -55,9 +57,11 @@ import { ReactiveFormComponent } from "./reactive-form/reactive-form.component";
     ChildCommuComponent,
     ParentCommuComponent,
     ServiceComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    CldComponent,
+    PrtComponent
   ],
-  bootstrap: [ReactiveFormComponent],
+  bootstrap: [PrtComponent],
   providers: [
     DatePipe,
     CurrencyPipe,
@@ -68,7 +72,7 @@ import { ReactiveFormComponent } from "./reactive-form/reactive-form.component";
     PercentPipe,
     Customer,
    // ProductService,
-    //loggerService,
+    //loggerService, 
   ]
 })
 export class AppModule {}
