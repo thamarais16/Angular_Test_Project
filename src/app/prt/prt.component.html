@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      {{'Parent Component'}}
+    </div>
+    <div class="card-body">
+      <input type="text" [value]="message" (input)="message = $any($event.target).value" />
+
+      <input type="checkbox" [ngModel]="hideChild" (ngModelChange)="hideChild = $event" id="checky" />
+      <label for="checky" >Hide Child</label>
+
+      <div app-cld [received]="message" *okIf="!hideChild">
+        <b>I am Child Component</b>
+      </div>
+    </div>
+  </div>
+</div> 

@@ -36,6 +36,7 @@ import { ProSer } from "./pro-ser";
 import { ReactiveFormComponent } from "./reactive-form/reactive-form.component";
 import { CldComponent } from "./cld/cld.component" ;
 import { PrtComponent } from "./prt/prt.component" ;
+import { OkIfDirective } from "./ok-if.directive";
 
 @NgModule({
   imports: [CommonModule, BrowserModule, FormsModule, ReactiveFormsModule],
@@ -59,7 +60,8 @@ import { PrtComponent } from "./prt/prt.component" ;
     ServiceComponent,
     ReactiveFormComponent,
     CldComponent,
-    PrtComponent
+    PrtComponent,
+    OkIfDirective
   ],
   bootstrap: [PrtComponent],
   providers: [

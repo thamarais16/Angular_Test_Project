@@ -1,15 +1,50 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-prt',
   templateUrl: './prt.component.html',
-  styleUrls: ['./prt.component.css']
+  styleUrls: ['./prt.component.css'],
+  changeDetection: ChangeDetectionStrategy.Default,
 })
-export class PrtComponent implements OnInit {
+export class PrtComponent implements OnInit, OnChanges {
+  hideChild: boolean = false;
+  message: string = "";
+  
+  constructor() { 
+    console.log("parent constructor");
+  }
 
-  constructor() { }
+  ngOnChanges(){
+    console.log("parent ngOnchanges");
+  }
 
   ngOnInit() {
+    console.log("parent ngOnInit");
   }
+
+  ngDoCheck(){
+    console.log("parent ngDoCheck");
+  }
+
+  ngAfterContentInit(){
+    console.log("parent ngAfterContentInit");
+  }
+
+  ngAfterContentChecked(){
+    console.log("parent ngAfterContentchecked");
+  }
+
+  ngAfterViewInit(){
+    console.log("parent ngAfterViewInit");
+  }
+
+  ngAfterViewChecked(){
+    console.log("parent ngAfterViewchecked");
+  }
+
+  ngOnDestroy(){
+    console.log("parent ngOnDestroy");
+  }
+  
 
 }
