@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy, SimpleChanges, SimpleChange } from '@angular/core';
+import { Customer } from '../prt/prt.component';
 
 @Component({
   selector: '[app-cld]',
@@ -8,13 +9,20 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
 })
 export class CldComponent implements OnInit {
   @Input() received = "";
-
+  @Input() customer: Customer<string, number> = new Customer<string, number>();
+  changedValue = "";
+  
   constructor() { 
     console.log("child constructor");
   }
 
-  ngOnChanges(){
-    console.log("child ngOnchanges");
+  ngOnChanges(changes: SimpleChanges){
+    for(let key in changes){
+      let change = changes['key']
+      let previousValue =  JSON.stringify(change.previousValue);
+      let currentValue =  JSON.stringify(change.currentValue);
+      this.changedValue = JSON.stringify(`${previousValue} changed to ${currentValue}`);
+    }
   }
 
   ngOnInit() {

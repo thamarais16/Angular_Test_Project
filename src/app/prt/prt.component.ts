@@ -9,7 +9,8 @@ import { Component, OnInit, ChangeDetectionStrategy, Input, OnChanges } from '@a
 export class PrtComponent implements OnInit, OnChanges {
   hideChild: boolean = false;
   message: string = "";
-  
+  customer: Customer<string, number> = new Customer<string, number>();
+
   constructor() { 
     console.log("parent constructor");
   }
@@ -46,5 +47,13 @@ export class PrtComponent implements OnInit, OnChanges {
     console.log("parent ngOnDestroy");
   }
   
+  updateCustomer(): void{
+    console.log("none");
+  }
+}
 
+
+export class Customer<T, U>{
+  public name: T;
+  public code: U;
 }
