@@ -47,8 +47,10 @@ export class PrtComponent implements OnInit, OnChanges {
     //console.log("parent ngOnDestroy");
   }
   
-  updateCustomer(): void{
-    console.log("none");
+  updateCustomer(value): void{
+
+    value.resetForm();
+    value.reet();
   }
 }
 

@@ -4,7 +4,7 @@
       {{'Parent Component'}}
     </div>
     <div class="card-body">
-      <form #form (submit)="updateCustomer()">
+      <form #form="ngForm" (submit)="updateCustomer(form)">
         <div class="form-group"> 
           <label for="customersName">Customer Name</label>
           <input 
