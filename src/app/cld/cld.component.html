@@ -3,5 +3,7 @@
   <p>
     <ng-content></ng-content>
   </p>
-  <p>{{changedValue}}</p>
+  <ol>
+    <li *ngFor="let value of changedValue">{{value}}</li>
+  </ol>
 </div>
