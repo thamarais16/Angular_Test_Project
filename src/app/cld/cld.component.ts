@@ -32,13 +32,13 @@ export class CldComponent implements OnInit {
 
   ngOnChanges(changes: SimpleChanges) {
     console.log(changes);
-    for (let key in changes) {
-      let change = changes[key];
-      console.log(change);
+    //for (let key in changes) {
+      //let change = changes[key];
+      //console.log(change);
       // let previousValue =  JSON.stringify(change.previousValue);
       //let currentValue =  JSON.stringify(change.currentValue);
       //this.changedValue = JSON.stringify(`${previousValue} changed to ${currentValue}`);
-    }
+    //}
   }
 
   ngOnInit() {
@@ -53,6 +53,8 @@ export class CldComponent implements OnInit {
         this.changedValue.push(item.key+' is changed from '+ JSON.stringify(item.previousValue) +' to '+JSON.stringify(item.currentValue));
       });
 
+    }else{
+      this.changedValue.push("no content");
     }
   }
 
