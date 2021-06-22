@@ -17,40 +17,42 @@ export class CldComponent implements OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges){
+    console.log(changes);
     for(let key in changes){
       let change = changes[key];
-      let previousValue =  JSON.stringify(change.previousValue);
-      let currentValue =  JSON.stringify(change.currentValue);
-      this.changedValue = JSON.stringify(`${previousValue} changed to ${currentValue}`);
+      console.log(change);
+     // let previousValue =  JSON.stringify(change.previousValue);
+      //let currentValue =  JSON.stringify(change.currentValue);
+      //this.changedValue = JSON.stringify(`${previousValue} changed to ${currentValue}`);
     }
   }
 
   ngOnInit() {
-    console.log("child ngOnInit");
+    //console.log("child ngOnInit");
   }
 
   ngDoCheck(){
-    console.log("child ngDoCheck");
+    /console.log("child ngDoCheck");
   }
 
   ngAfterContentInit(){
-    console.log("child ngAfterContentInit");
+   / console.log("child ngAfterContentInit");
   }
 
   ngAfterContentChecked(){
-    console.log("child ngAfterContentchecked");
+    /console.log("child ngAfterContentchecked");
   }
 
   ngAfterViewInit(){
-    console.log("child ngAfterViewInit");
+    /console.log("child ngAfterViewInit");
   }
 
   ngAfterViewChecked(){
-    console.log("child ngAfterViewchecked");
+    /console.log("child ngAfterViewchecked");
   }
 
   ngOnDestroy(){
-    console.log("child ngOnDestroy");
+    /console.log("child ngOnDestroy");
   }
 
 } 

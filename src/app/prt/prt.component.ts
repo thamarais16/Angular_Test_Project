@@ -12,39 +12,39 @@ export class PrtComponent implements OnInit, OnChanges {
   customer: Customer<string, number> = new Customer<string, number>();
 
   constructor() { 
-    console.log("parent constructor");
+    //console.log("parent constructor");
   }
 
   ngOnChanges(){
-    console.log("parent ngOnchanges");
+    //console.log("parent ngOnchanges");
   }
 
   ngOnInit() {
-    console.log("parent ngOnInit");
+    //console.log("parent ngOnInit");
   }
 
   ngDoCheck(){
-    console.log("parent ngDoCheck");
+    //console.log("parent ngDoCheck");
   }
 
   ngAfterContentInit(){
-    console.log("parent ngAfterContentInit");
+    //console.log("parent ngAfterContentInit");
   }
 
   ngAfterContentChecked(){
-    console.log("parent ngAfterContentchecked");
+    //console.log("parent ngAfterContentchecked");
   }
 
   ngAfterViewInit(){
-    console.log("parent ngAfterViewInit");
+    //console.log("parent ngAfterViewInit");
   }
 
   ngAfterViewChecked(){
-    console.log("parent ngAfterViewchecked");
+    //console.log("parent ngAfterViewchecked");
   }
 
   ngOnDestroy(){
-    console.log("parent ngOnDestroy");
+    //console.log("parent ngOnDestroy");
   }
   
   updateCustomer(): void{
